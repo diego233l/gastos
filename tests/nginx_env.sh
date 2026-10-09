@@ -10,7 +10,7 @@ start)
   chmod 777 "$T/data"
   echo "demo:$(openssl passwd -apr1 demo123)" > "$T/htpasswd"
   sed -e "s#/opt/apps/gastos#$ROOT#g" -e "s#/var/lib/gastos#$T/data#g" \
-      -e "s#/run/fcgiwrap.socket#$T/fcgi.sock#" -e "s#listen 8080#listen 18080#" \
+      -e "s#/run/fcgiwrap.socket#$T/fcgi.sock#" -e "s#listen 8081#listen 18080#" \
       -e "s#include fastcgi_params#include /etc/nginx/fastcgi_params#" -e "s#/etc/nginx/gastos.htpasswd#$T/htpasswd#" "$ROOT/nginx/gastos.conf" > "$T/site.conf"
   cat > "$T/nginx.conf" <<CONF
 pid $T/nginx.pid;

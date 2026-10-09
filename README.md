@@ -53,10 +53,10 @@ echo '30 3 * * * www-data /usr/bin/python3 /opt/apps/gastos/scripts/backup.py >>
 sudo chmod 644 /etc/cron.d/gastos
 
 # 8. Cortafuegos (solo si usas ufw)
-sudo ufw allow 8080/tcp
+sudo ufw allow 8081/tcp
 ```
 
-Abre `http://IP-DE-LA-MAQUINA:8080` e introduce usuario y contraseña.
+Abre `http://IP-DE-LA-MAQUINA:8081` e introduce usuario y contraseña.
 
 > **Mientras el código no esté fusionado en `main`**, clona la rama de desarrollo:
 > `sudo git clone -b claude/upbeat-bardeen-07y2ha https://github.com/diego233l/gastos.git /opt/apps/gastos`.
@@ -64,13 +64,13 @@ Abre `http://IP-DE-LA-MAQUINA:8080` e introduce usuario y contraseña.
 
 ### Convivir con la otra web de la máquina
 
-* Esta app **solo** escucha en el puerto 8080 (`listen 8080;`, sin `default_server` y sin `[::]`), así que no interfiere con tu otro sitio.
-  Comprueba antes que el puerto está libre: `sudo ss -ltnp | grep :8080` (si sale algo, elige otro puerto, p. ej. 8081, en el `listen` de `nginx/gastos.conf` y en `ufw`).
+* Esta app **solo** escucha en el puerto **8081** (`listen 8081;`, para no chocar con la web de coches que ya usa el 8080, sin `default_server` y sin `[::]`), así que no interfiere con tu otro sitio.
+  Comprueba antes que el puerto está libre: `sudo ss -ltnp | grep :8081` (si sale algo, elige otro puerto, p. ej. 8082, en el `listen` de `nginx/gastos.conf` y en `ufw`).
   Si lo cambias, guarda el cambio como commit local para que `git pull` siga funcionando:
   `sudo git -C /opt/apps/gastos config pull.rebase false && sudo git -C /opt/apps/gastos -c user.name=srv -c user.email=srv@localhost commit -am "Puerto local"`.
 * `fcgiwrap.socket` es un recurso compartido: si la otra web ya lo usa, no pasa nada, ambos pueden usarlo a la vez.
 * La contraseña (`auth_basic`) está dentro del bloque `server` de esta app: no afecta a la otra web.
-* Para usar un dominio en lugar de un puerto, cambia `server_name _;` por tu dominio y `listen 8080;` por `listen 80;`.
+* Para usar un dominio en lugar de un puerto, cambia `server_name _;` por tu dominio y `listen 8081;` por `listen 80;`.
 
 ## Actualizar
 
@@ -96,8 +96,8 @@ Solo si cambia `nginx/gastos.conf`: `sudo nginx -t && sudo systemctl reload ngin
 | `403 Forbidden` en `/api/...` (texto plano) | `api.py` sin permiso de ejecución | `sudo chmod +x /opt/apps/gastos/app/api.py` (y `git config core.fileMode true`) |
 | «No se puede abrir la base de datos…» | La carpeta de datos no es de `www-data` | `sudo chown -R www-data:www-data /var/lib/gastos` |
 | «La base de datos está ocupada» (503) | Otra escritura en curso (copia, otra pestaña) | Reintenta; si persiste, mira `/var/lib/gastos/error.log` |
-| `nginx -t` falla: `bind() to 0.0.0.0:8080 failed` | Puerto en uso | Cambia el puerto en `listen` (ver arriba) |
-| `nginx -t` falla con `[::]:8080` | Máquina sin IPv6 | Esta config **no** usa `[::]`; no lo añadas |
+| `nginx -t` falla: `bind() to 0.0.0.0:8081 failed` | Puerto en uso | Cambia el puerto en `listen` (ver arriba) |
+| `nginx -t` falla con `[::]:8081` | Máquina sin IPv6 | Esta config **no** usa `[::]`; no lo añadas |
 | `nginx -t` falla: no encuentra `gastos.htpasswd` | Falta el paso 5 | Crea el archivo con `openssl passwd -apr1` |
 | Pide contraseña una y otra vez | Clave mal escrita o permisos | Regenera el htpasswd (paso 5); debe ser legible por `www-data` (`chmod 640`, grupo `www-data`) |
 | `/` da 404 | Falta `index.html` o ruta del `root` mal | `ls /opt/apps/gastos/web/index.html`; el `root` debe ser `/opt/apps/gastos/web` |
@@ -106,7 +106,7 @@ Solo si cambia `nginx/gastos.conf`: `sudo nginx -t && sudo systemctl reload ngin
 | No se crean copias | cron no cargó el archivo | `ls -l /etc/cron.d/gastos` (root, 644, acaba en salto de línea); `sudo -u www-data python3 /opt/apps/gastos/scripts/backup.py`; mira `/var/lib/gastos/backup.log` |
 | `git pull` dice «dubious ownership» | Repo de otro usuario | Ejecuta siempre con `sudo` o `git config --global --add safe.directory /opt/apps/gastos` |
 | `git pull` pide usuario/contraseña | Repositorio privado | Ver nota siguiente |
-| No llego desde otro equipo | Cortafuegos | `sudo ufw allow 8080/tcp`; comprueba también el cortafuegos del proveedor |
+| No llego desde otro equipo | Cortafuegos | `sudo ufw allow 8081/tcp`; comprueba también el cortafuegos del proveedor |
 
 Registros útiles: `/var/log/nginx/error.log`, `/var/lib/gastos/error.log` (trazas de errores de la API), `journalctl -u fcgiwrap`.
 
