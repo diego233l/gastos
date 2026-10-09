@@ -128,6 +128,10 @@
 - Suscripción
 
 == Nube y almacenamiento
+# Apple One | https://www.apple.com/es/apple-one | #1d1d1f
+- Individual | 19.95 | mensual
+- Familiar | 25.95 | mensual
+- Premier | 37.95 | mensual
 # iCloud+ | https://www.icloud.com | #3693f5
 - 50 GB | 0.99 | mensual
 - 200 GB | 2.99 | mensual
@@ -306,6 +310,20 @@
 - Mensual
 
 == Salud, deporte y bienestar
+# Altafit | https://www.altafit.es | #e30613
+- Cuota mensual
+# Anytime Fitness | https://www.anytimefitness.es | #5b2d90
+- Cuota mensual
+# Fitness Park | https://www.fitnesspark.es | #e2001a
+- Cuota mensual
+# McFit | https://www.mcfit.com/es | #ffdd00
+- Cuota mensual
+# Metropolitan | https://www.metropolitan.es | #111111
+- Cuota mensual
+# Virgin Active | https://www.virginactive.es | #e10a0a
+- Cuota mensual
+# Holmes Place | https://www.holmesplace.es | #00a0af
+- Cuota mensual
 # Basic-Fit | https://www.basic-fit.com | #ff6a00
 - Basic
 - Comfort
@@ -477,6 +495,31 @@
 - Plaza de garaje
 # Peaje (Telepeaje) | | #78909c
 - Cuota
+
+== Banca y finanzas
+# Revolut | https://www.revolut.com | #0666eb
+- Standard
+- Plus
+- Premium
+- Metal
+- Ultra
+# N26 | https://n26.com | #36a18b
+- Standard
+- Smart
+- You
+- Metal
+# bunq | https://www.bunq.com | #3dd9a4
+- Core
+- Pro
+- Elite
+# Coinbase One | https://www.coinbase.com | #0052ff
+- Mensual
+# Bit2Me | https://bit2me.com | #1f6cff
+- Premium
+# Wise | https://wise.com | #9fe870
+- Cuenta
+# PayPal | https://www.paypal.com | #003087
+- Suscripción recurrente
 
 == Compras y membresías
 # Amazon Prime | https://www.amazon.es/prime | #ff9900

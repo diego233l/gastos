@@ -53,6 +53,8 @@ good = {"name": "Netflix", "service": "Netflix", "plan": "Estándar", "category"
 
 st, d, _ = jcall("GET", "/api/health"); check("health", st == 200 and d["ok"], d)
 st, d, _ = jcall("GET", "/api/catalog"); check("catálogo", st == 200 and len(d["categories"]) > 5 and not d["problems"], d if st != 200 else d["problems"])
+svcs = {x["name"]: x for c in d["categories"] for x in c["services"]}
+check("catálogo: Revolut con logo y Apple Music con logo", svcs["Revolut"]["logo"] == "logos/revolut.svg" and svcs["Apple Music"]["logo"] == "logos/apple-music.svg", svcs.get("Revolut"))
 st, d, _ = jcall("POST", "/api/subscriptions", good, csrf=False); check("CSRF: POST sin cabecera -> 403", st == 403, (st, d))
 st, d, _ = jcall("POST", "/api/subscriptions", {}); check("validación: vacío -> 422 con mensaje", st == 422 and "obligatorio" in d["error"], d)
 for label, patch in [("precio negativo", {"price": -1}), ("precio con 3 decimales", {"price": "1.234"}), ("precio texto", {"price": "abc"}),

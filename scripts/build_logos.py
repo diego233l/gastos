@@ -23,7 +23,7 @@ ALIAS = {
     "GeForce NOW": "nvidia", "Gemini": "googlegemini", "Kobo Plus": "rakutenkobo",
     "Apple Fitness+": "apple", "Fitbit Premium": "fitbit", "Uber One": "uber",
     "Glovo Prime": "glovo", "Zalando Plus": "zalando", "X (Twitter)": "x",
-    "Meta Verified": "meta", "Movistar Plus+": "movistar", "Crunchyroll": "crunchyroll",
+    "Meta Verified": "meta", "Apple One": "apple", "Movistar Plus+": "movistar", "Crunchyroll": "crunchyroll",
 }
 
 
