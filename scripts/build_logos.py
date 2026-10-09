@@ -117,6 +117,16 @@ def main(pkg):
             if slug not in made:
                 open(os.path.join(out_dir, slug + ".svg"), "w", encoding="utf-8").write(tile)
                 made.append(slug)
+    # Logos manuales (catalog/logos/*.svg): tienen prioridad sobre los generados
+    manual_dir = os.path.join(ROOT, "catalog", "logos")
+    manual = [f for f in sorted(os.listdir(manual_dir)) if f.endswith(".svg")] if os.path.isdir(manual_dir) else []
+    for f in manual:
+        with open(os.path.join(manual_dir, f), "rb") as src, open(os.path.join(out_dir, f), "wb") as dst:
+            dst.write(src.read())
+        if f[:-4] not in made:
+            made.append(f[:-4])
+    if manual:
+        print("%d logos manuales aplicados: %s" % (len(manual), ", ".join(manual)))
     with open(os.path.join(out_dir, "LICENSE.txt"), "w", encoding="utf-8") as fh:
         fh.write("Iconos de simple-icons (https://simpleicons.org), licencia CC0 1.0.\n"
                  "Las marcas y logotipos pertenecen a sus respectivos titulares.\n")
