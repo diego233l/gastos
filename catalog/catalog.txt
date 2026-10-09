@@ -1378,3 +1378,199 @@
 # Open Collective | https://opencollective.com | #7fadf2
 # GitHub Sponsors | https://github.com/sponsors | #ea4aaa
 # Liberapay | https://liberapay.com | #f6c915
+
+== Préstamos e hipotecas
+# Santander | https://www.bancosantander.es | #ec0000
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# BBVA | https://www.bbva.es | #004481
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# CaixaBank | https://www.caixabank.es | #007eae
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Banco Sabadell | https://www.bancsabadell.com | #0a6ebd
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Bankinter | https://www.bankinter.com | #ff6e00
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# ING | https://www.ing.es | #ff6200
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Openbank | https://www.openbank.es | #ec0000
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# ABANCA | https://www.abanca.com | #a50034
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Unicaja | https://www.unicajabanco.es | #00a650
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Kutxabank | https://www.kutxabank.es | #e30613
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Ibercaja | https://www.ibercaja.es | #003781
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# EVO Banco | https://www.evobanco.com | #00b140
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# imagin | https://www.imagin.com | #00a3e0
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Cajamar | https://www.cajamar.es | #00a651
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Caja Rural | https://www.cajarural.com | #009a44
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Laboral Kutxa | https://www.laboralkutxa.com | #e30613
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Banca March | https://www.bancamarch.es | #00539f
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Targobank | https://www.targobank.es | #e30613
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Deutsche Bank | https://www.deutsche-bank.es | #0018a8
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Triodos Bank | https://www.triodos.es | #6cbf40
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Banco Mediolanum | https://www.bancomediolanum.es | #0d3b66
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# MyInvestor | https://myinvestor.es | #00a3e0
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Pibank | https://www.pibank.es | #e30613
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Bnext | https://www.bnext.es | #00d1b2
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Arquia Banca | https://www.arquia.es | #e30613
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Self Bank | https://www.selfbank.es | #00a3e0
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Renta 4 Banco | https://www.r4.com | #00539f
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Colonya (Caixa Pollença) | https://www.colonya.com | #00539f
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Caixa Ontinyent | https://www.caixaontinyent.es | #00539f
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Cecabank | https://www.cecabank.es | #00539f
+- Hipoteca fija | | mensual
+- Hipoteca variable | | mensual
+- Hipoteca mixta | | mensual
+- Préstamo personal | | mensual
+# Santander Consumer Finance | https://www.santanderconsumer.es | #ec0000
+- Préstamo coche | | mensual
+- Préstamo personal | | mensual
+- Financiación de compra | | mensual
+# Cetelem | https://www.cetelem.es | #00a651
+- Préstamo personal | | mensual
+- Tarjeta revolving | | mensual
+- Financiación de compra | | mensual
+# Cofidis | https://www.cofidis.es | #e30613
+- Préstamo personal | | mensual
+- Tarjeta revolving | | mensual
+- Financiación de compra | | mensual
+# Oney | https://www.oney.es | #00a3e0
+- Préstamo personal | | mensual
+- Financiación de compra | | mensual
+# Younited | https://www.younited.com/es | #6e3cf5
+- Préstamo personal | | mensual
+# WiZink | https://www.wizink.es | #00a651
+- Tarjeta revolving | | mensual
+- Préstamo personal | | mensual
+# Servicios Financieros Carrefour | https://www.bancocarrefour.es | #0b3a7d
+- Tarjeta revolving | | mensual
+- Préstamo personal | | mensual
+# Financiera El Corte Inglés | https://www.financieraelcorteingles.es | #00753a
+- Tarjeta revolving | | mensual
+- Préstamo personal | | mensual
+# Aplazame | https://aplazame.com | #00d1b2
+- Pago aplazado | | mensual
+# Klarna | https://www.klarna.com | #ffb3c7
+- Pago en cuotas | | mensual
+# PayPal (Pagar en 3 plazos) | https://www.paypal.com | #003087
+- Pago en cuotas | | mensual
+# Sequra | https://www.sequra.es | #00d1b2
+- Pago en cuotas | | mensual
+# Cashper | https://www.cashper.es | #e30613
+- Préstamo personal | | mensual
+# Vivus | https://www.vivus.es | #ff6a00
+- Préstamo personal | | mensual
+# Moneyman | https://www.moneyman.es | #e30613
+- Préstamo personal | | mensual
+# Ferratum | https://www.ferratum.es | #e30613
+- Préstamo personal | | mensual
+# Prestamos ICO | https://www.ico.es | #00539f
+- Préstamo ICO | | mensual

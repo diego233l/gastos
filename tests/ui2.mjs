@@ -49,8 +49,21 @@ await page.waitForFunction(() => document.querySelector('select[name="category-s
 ok("detecta solo la categoría por palabras clave", true);
 await page.keyboard.press("Escape");
 
+// --- préstamos e hipotecas: banco con logo y plan
+await page.click(".page-head .btn-primary"); await page.waitForSelector("dialog[open]");
+await page.type('input[name="name"]', "hipoteca santander", { delay: 15 });
+await page.waitForFunction(() => document.querySelector('select[name="service-sel"]').value === "Santander");
+ok("detecta banco y categoría de préstamos", (await page.inputValue('select[name="category-sel"]')) === "Préstamos e hipotecas");
+ok("detecta el plan «Hipoteca» no (solo el banco)", (await page.inputValue('select[name="plan-sel"]')) !== "Préstamo personal");
+await page.selectOption('select[name="plan-sel"]', "Hipoteca variable");
+ok("plan de hipoteca rellena periodicidad mensual", (await page.inputValue('select[name="cycle"]')) === "monthly");
+ok("logo del banco en la vista previa", (await page.getAttribute(".photo-preview img", "src")).includes("logos/santander.svg"));
+await page.fill('input[name="price"]', "645,30"); await page.fill('input[name="next_charge"]', inDays(5));
+await page.click('dialog button[type="submit"]'); await page.waitForSelector("dialog", { state: "detached" });
+await page.waitForFunction(() => document.querySelectorAll(".card").length === 2); await settle();
+await page.screenshot({ path: `${SHOTS}/15-hipoteca.png` });
 // --- ficha con logo
-await page.click(".card"); await page.waitForSelector(".detail"); await settle();
+await page.click(".card:has-text(\"Apple Music\")"); await page.waitForSelector(".detail"); await settle();
 ok("ficha muestra el logo", !!(await page.$(".photo-logo img")));
 await page.screenshot({ path: `${SHOTS}/13-ficha-logo.png` });
 

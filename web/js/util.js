@@ -121,6 +121,7 @@ export const normText = (s) =>
   (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 
 const CATEGORY_HINTS = [
+  [/\b(hipoteca|prestamo|credito|financiacion|revolving|cuotas)\b/, "Préstamos e hipotecas"],
   [/\b(seguro|mapfre|axa|poliza)\b/, "Seguros"],
   [/\b(vpn|antivirus|contrasenas|password)\b/, "Seguridad y VPN"],
   [/\b(gimnasio|gym|fitness|yoga|crossfit|entrenador)\b/, "Salud, deporte y bienestar"],

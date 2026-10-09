@@ -23,7 +23,7 @@ ALIAS = {
     "GeForce NOW": "nvidia", "Gemini": "googlegemini", "Kobo Plus": "rakutenkobo",
     "Apple Fitness+": "apple", "Fitbit Premium": "fitbit", "Uber One": "uber",
     "Glovo Prime": "glovo", "Zalando Plus": "zalando", "X (Twitter)": "x",
-    "Meta Verified": "meta", "Apple One": "apple", "Google Workspace": "googleworkspace",
+    "Meta Verified": "meta", "Santander Consumer Finance": "santander", "PayPal (Pagar en 3 plazos)": "paypal", "Apple One": "apple", "Google Workspace": "googleworkspace",
     "Microsoft Teams": "microsoftteams", "AppleCare+": "apple", "Apple Developer Program": "apple",
     "Revolut Business": "revolut", "Apple News+": "applenews", "Ryanair Prime": "ryanair",
     "Twitch Turbo": "twitch", "YouTube Membresías": "youtube", "Adobe Lightroom": "adobelightroom",
@@ -54,6 +54,24 @@ def luminance(hexcolor):
     return 0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2]
 
 
+# Bancos y prestamistas sin icono en simple-icons: se genera un logotipo-texto con el nombre
+# sobre el color de la marca (es una aproximación, no el logotipo oficial).
+WORDMARK_CATEGORY = "Préstamos e hipotecas"
+SKIP_WORDS = {"banco", "banca", "caja", "servicios", "financiera"}
+
+
+def wordmark(name, color):
+    words = name.split(" (")[0].split()
+    label = next((w for w in words if w.lower() not in SKIP_WORDS), words[0])
+    size = max(9, min(22, int(52 / (0.58 * max(len(label), 1)))))
+    fg = "#111111" if luminance(color.lstrip("#")) > 0.55 else "#ffffff"
+    label = label.replace("&", "&amp;").replace("<", "&lt;")
+    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256">'
+            '<rect width="64" height="64" rx="14" fill="%s"/>'
+            '<text x="32" y="%d" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-weight="700" '
+            'font-size="%d" fill="%s">%s</text></svg>\n' % (color, 32 + size // 3, size, fg, label))
+
+
 def main(pkg):
     data = json.load(open(os.path.join(pkg, "data", "simple-icons.json"), encoding="utf-8"))
     by_slug = {e["slug"]: e for e in data}
@@ -69,13 +87,19 @@ def main(pkg):
             os.remove(os.path.join(out_dir, old))
     with open(os.path.join(ROOT, "catalog", "catalog.txt"), encoding="utf-8") as fh:
         cats = api.parse_catalog(fh.read())["categories"]
-    made, missing = [], []
+    made, missing, wordmarks = [], [], []
     for cat in cats:
         for svc in cat["services"]:
             if svc["name"] in EXCLUDE:
                 missing.append(svc["name"])
                 continue
             entry = by_slug.get(ALIAS.get(svc["name"], "")) or by_title.get(norm(svc["name"]))
+            if not entry and cat["name"] == WORDMARK_CATEGORY and svc["color"]:
+                slug = api.logo_slug(svc["name"])
+                open(os.path.join(out_dir, slug + ".svg"), "w", encoding="utf-8").write(wordmark(svc["name"], svc["color"]))
+                made.append(slug)
+                wordmarks.append(svc["name"])
+                continue
             if not entry:
                 missing.append(svc["name"])
                 continue
@@ -96,6 +120,7 @@ def main(pkg):
     with open(os.path.join(out_dir, "LICENSE.txt"), "w", encoding="utf-8") as fh:
         fh.write("Iconos de simple-icons (https://simpleicons.org), licencia CC0 1.0.\n"
                  "Las marcas y logotipos pertenecen a sus respectivos titulares.\n")
+    print("%d de ellos son logotipos-texto (sin icono oficial): %s" % (len(wordmarks), ", ".join(wordmarks)))
     print("%d logos generados · %d servicios sin logo (usarán un monograma con su color)" % (len(made), len(missing)))
 
 
