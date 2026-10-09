@@ -94,3 +94,86 @@ export function initial(sub) {
   const t = (sub.name || "?").trim();
   return (t[0] || "?").toUpperCase();
 }
+
+// ------------------------------------------------------------ cobros pendientes
+// Un cobro cuenta como pagado si hay un pago «realizado» de esa suscripción en el mismo periodo
+// (mismo mes; misma fecha en las semanales). Lo que no está pagado aparece como pendiente:
+// el próximo cobro calculado + los pagos «programados» del historial (sin duplicar).
+export function pendingCharges(sub, payments, toS) {
+  if (sub.status !== "active") return [];
+  const keyOf = (d) => (sub.cycle === "weekly" ? d : d.slice(0, 7));
+  const mine = payments.filter((p) => p.subscription_id === sub.id);
+  const paid = new Set(mine.filter((p) => p.status === "done").map((p) => keyOf(p.date)));
+  const out = new Map();
+  for (const d of occurrences(sub, "2000-01-01", toS)) {
+    if (!paid.has(keyOf(d))) out.set(keyOf(d), { date: d, amount: sub.price, paymentId: null, sub });
+  }
+  for (const p of mine) {
+    if (p.status === "scheduled" && p.date <= toS && !paid.has(keyOf(p.date))) {
+      out.set(keyOf(p.date), { date: p.date, amount: p.amount, paymentId: p.id, sub });
+    }
+  }
+  return [...out.values()].sort((a, b) => a.date.localeCompare(b.date));
+}
+
+// ------------------------------------------------------------ detección en el catálogo
+export const normText = (s) =>
+  (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+
+const CATEGORY_HINTS = [
+  [/\b(seguro|mapfre|axa|poliza)\b/, "Seguros"],
+  [/\b(vpn|antivirus|contrasenas|password)\b/, "Seguridad y VPN"],
+  [/\b(gimnasio|gym|fitness|yoga|crossfit|entrenador)\b/, "Salud, deporte y bienestar"],
+  [/\b(luz|gas|agua|electricidad|alarma)\b/, "Hogar y suministros"],
+  [/\b(movil|fibra|internet|telefonia|datos)\b/, "Telefonía e internet"],
+  [/\b(musica|podcast|radio)\b/, "Música y podcasts"],
+  [/\b(peliculas|series|streaming|tv)\b/, "Streaming de vídeo"],
+  [/\b(juegos|gaming|videojuegos|consola)\b/, "Videojuegos"],
+  [/\b(nube|cloud|almacenamiento|hosting)\b/, "Nube y almacenamiento"],
+  [/\b(curso|idiomas|clases|academia)\b/, "Formación e idiomas"],
+  [/\b(periodico|revista|noticias|libros|audiolibros)\b/, "Noticias y lectura"],
+  [/\b(abono|metro|autobus|taxi|parking|garaje)\b/, "Transporte y movilidad"],
+];
+
+// Busca en el catálogo el servicio que mejor encaja con lo que el usuario ha escrito.
+// Devuelve {category, service, plan?} o, si solo se reconoce la categoría, {category}.
+export function detectFromText(text, catalog) {
+  const t = normText(text);
+  if (t.length < 3 || !catalog) return null;
+  const padded = ` ${t} `;
+  let best = null;
+  for (const cat of catalog.categories) {
+    for (const svc of cat.services) {
+      const n = normText(svc.name);
+      if (n.length < 3) continue;
+      let score = 0;
+      if (n === t) score = 1000 + n.length;
+      else if (padded.includes(` ${n} `)) score = 500 + n.length;           // «mi netflix premium»
+      else if (n.startsWith(t) && t.length >= 4) score = 100 + t.length;    // «spoti» -> Spotify
+      if (score && (!best || score > best.score)) best = { score, cat, svc };
+    }
+  }
+  if (best) {
+    const plan = best.svc.plans.find((p) => {
+      const pn = normText(p.name);
+      return pn.length >= 3 && padded.includes(` ${pn} `);
+    });
+    return { category: best.cat.name, service: best.svc.name, plan: plan ? plan.name : "" };
+  }
+  for (const [rx, cat] of CATEGORY_HINTS) {
+    if (rx.test(t) && catalog.categories.some((c) => c.name === cat)) return { category: cat, service: "", plan: "" };
+  }
+  return null;
+}
+
+// Logo del catálogo para un servicio (o, si no hay servicio, para lo que se parezca al nombre).
+export function logoFor(sub, catalog) {
+  if (!catalog) return "";
+  const find = (name) => {
+    for (const cat of catalog.categories) for (const svc of cat.services) if (svc.name === name) return svc.logo || "";
+    return "";
+  };
+  if (sub.service) return find(sub.service);
+  const hit = detectFromText(sub.name, catalog);
+  return hit && hit.service ? find(hit.service) : "";
+}

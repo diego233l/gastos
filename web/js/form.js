@@ -3,7 +3,7 @@ import { api } from "./api.js";
 import { h, icon, toast, render } from "./dom.js";
 import { openDialog } from "./dialogs.js";
 import { shrinkImage } from "./photo.js";
-import { CYCLES, STATUS, PAY_STATUS, hashColor, todayIso } from "./util.js";
+import { CYCLES, STATUS, PAY_STATUS, hashColor, todayIso, detectFromText, logoFor, normText } from "./util.js";
 
 const OTHER = "__otro__";
 const PAYMENT_METHODS = [
@@ -80,6 +80,7 @@ export function openSubscriptionForm({ sub, catalog, onSaved }) {
   const editing = !!sub;
   const cats = catalog.categories;
   let loading = true;
+  let applying = false;
   const photo = { blob: null, url: null, remove: false };
 
   const category = combo({ name: "category", required: true, placeholder: "Elige una categoría…", maxlength: 40 });
@@ -115,12 +116,16 @@ export function openSubscriptionForm({ sub, catalog, onSaved }) {
     const c = catObj();
     return c ? c.services.find((s) => s.name === service.value()) : null;
   };
+  let detected = false; // true mientras categoría/servicio los haya puesto la detección y no el usuario
   category.onChange(() => {
+    if (!loading && !applying) detected = false;
     const c = catObj();
     service.setOptions(c ? c.services.map((s) => s.name) : []);
     plan.setOptions([]);
   });
   service.onChange(() => {
+    if (!loading && !applying) detected = false;
+    renderPreview();
     const s = svcObj();
     plan.setOptions(s ? s.plans.map((p) => p.name) : []);
     if (loading || !s) return;
@@ -137,16 +142,55 @@ export function openSubscriptionForm({ sub, catalog, onSaved }) {
   });
   color.addEventListener("input", () => { color.dataset.touched = "1"; });
 
+  // --- detección por el nombre: «apple music», «mi netflix premium», «seguro del coche»…
+  let detectTimer = 0;
+  const applyDetection = () => {
+    if (loading) return;
+    const catEmpty = !category.value() && !service.value();
+    if (!catEmpty && !detected) return; // el usuario ya eligió: no se toca
+    const hit = detectFromText(name.value, catalog);
+    if (!hit) return;
+    applying = true;
+    try {
+      category.set(hit.category);
+      const c = catObj();
+      service.setOptions(c ? c.services.map((x) => x.name) : []);
+      service.set(hit.service);
+      const sv = svcObj();
+      plan.setOptions(sv ? sv.plans.map((x) => x.name) : []);
+      if (hit.plan) plan.set(hit.plan);
+      detected = true;
+      // «apple music» -> «Apple Music» (solo si el nombre es exactamente el del servicio)
+      if (hit.service && normText(name.value) === normText(hit.service) && name.value !== hit.service) name.value = hit.service;
+      if (sv) {
+        if (sv.color && !color.dataset.touched) { color.value = sv.color; color.dataset.auto = "1"; }
+        autofill(url, sv.url);
+        const p = sv.plans.find((x) => x.name === hit.plan);
+        if (p && p.price !== null) autofill(price, p.price.toFixed(2).replace(".", ","));
+        if (p && p.cycle && (!cycle.value || cycle.dataset.auto === "1")) { cycle.value = p.cycle; cycle.dataset.auto = "1"; }
+      }
+    } finally { applying = false; }
+    renderPreview();
+  };
+  name.addEventListener("input", () => {
+    clearTimeout(detectTimer);
+    detectTimer = setTimeout(() => { applyDetection(); renderPreview(); }, 250);
+  });
+
   // --- foto
   const preview = h("div", { class: "photo-preview" });
   const fileInput = h("input", { type: "file", accept: "image/*", class: "visually-hidden", id: "photo-file" });
   const removeBtn = h("button", { type: "button", class: "btn btn-sm", text: "Quitar foto" });
   const pickBtn = h("label", { class: "btn btn-sm", for: "photo-file" }, icon("image", 16), " Elegir foto");
   const photoMsg = h("span", { class: "field-hint" });
+  const photoNote = h("p", { class: "field-hint" });
   const renderPreview = () => {
-    const src = photo.url || (!photo.remove && editing && sub.has_photo ? `api/subscriptions/${sub.id}/photo?v=${encodeURIComponent(sub.photo_v)}` : null);
-    render(preview, src ? h("img", { src, alt: "Vista previa de la foto" }) : h("span", { class: "photo-empty", text: "Sin foto" }));
-    removeBtn.hidden = !src;
+    const own = photo.url || (!photo.remove && editing && sub.has_photo ? `api/subscriptions/${sub.id}/photo?v=${encodeURIComponent(sub.photo_v)}` : null);
+    const logo = own ? "" : logoFor({ service: service.value(), name: name.value }, catalog);
+    const src = own || logo;
+    render(preview, src ? h("img", { src, alt: own ? "Vista previa de la foto" : "Logo automático" }) : h("span", { class: "photo-empty", text: "Sin foto" }));
+    removeBtn.hidden = !own;
+    photoNote.textContent = !own && logo ? "Logo automático del servicio. Si subes tu propia foto, se usará esa." : "";
   };
   fileInput.addEventListener("change", async () => {
     const file = fileInput.files[0];
@@ -200,7 +244,7 @@ export function openSubscriptionForm({ sub, catalog, onSaved }) {
       field("Notas", notes, { wide: true })),
     h("fieldset", { class: "photo-field" },
       h("legend", { text: "Foto o logo" }),
-      preview,
+      preview, photoNote,
       h("div", { class: "photo-actions" }, fileInput, pickBtn, removeBtn, photoMsg)),
     errorBox,
     h("div", { class: "dlg-actions" }, cancelBtn, saveBtn));

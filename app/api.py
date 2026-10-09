@@ -570,12 +570,25 @@ def parse_catalog(text, strict=False):
     return {"categories": categories, "problems": problems}
 
 
+def logo_slug(name):
+    """Nombre de archivo del logo de un servicio: «Apple Music» -> apple-music."""
+    import unicodedata
+    ascii_name = unicodedata.normalize("NFKD", name.lower()).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", ascii_name).strip("-")
+
+
 def load_catalog():
     try:
         with open(CATALOG_PATH, encoding="utf-8") as fh:
-            return parse_catalog(fh.read())
+            result = parse_catalog(fh.read())
     except OSError as exc:
         raise ApiError(500, "No se pudo leer el catálogo (%s)." % exc)
+    logos_dir = os.path.join(BASE_DIR, "web", "logos")
+    for cat in result["categories"]:
+        for svc in cat["services"]:
+            slug = logo_slug(svc["name"])
+            svc["logo"] = "logos/%s.svg" % slug if slug and os.path.isfile(os.path.join(logos_dir, slug + ".svg")) else ""
+    return result
 
 
 # --------------------------------------------------------------------------

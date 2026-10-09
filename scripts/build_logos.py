@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+"""Genera web/logos/<servicio>.svg (icono de marca sobre fondo de su color) desde el paquete
+npm `simple-icons` (licencia CC0; las marcas pertenecen a sus titulares).
+
+    npm pack simple-icons && mkdir si && tar xzf simple-icons-*.tgz -C si
+    python3 scripts/build_logos.py si/package
+
+Solo hace falta ejecutarlo cuando cambie el catálogo; los SVG generados se versionan en el repo."""
+import json
+import os
+import re
+import sys
+import unicodedata
+
+sys.dont_write_bytecode = True
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "app"))
+import api  # noqa: E402
+
+# Servicio del catálogo -> slug de simple-icons (cuando el nombre no coincide o es el mismo grupo)
+ALIAS = {
+    "YouTube Premium": "youtube", "PlayStation Plus": "playstation", "EA Play": "ea",
+    "GeForce NOW": "nvidia", "Gemini": "googlegemini", "Kobo Plus": "rakutenkobo",
+    "Apple Fitness+": "apple", "Fitbit Premium": "fitbit", "Uber One": "uber",
+    "Glovo Prime": "glovo", "Zalando Plus": "zalando", "X (Twitter)": "x",
+    "Meta Verified": "meta", "Movistar Plus+": "movistar", "Crunchyroll": "crunchyroll",
+}
+
+
+def norm(text):
+    t = unicodedata.normalize("NFKD", text.lower()).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "", t)
+
+
+def luminance(hexcolor):
+    r, g, b = (int(hexcolor[i:i + 2], 16) / 255 for i in (0, 2, 4))
+    lin = [c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4 for c in (r, g, b)]
+    return 0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2]
+
+
+def main(pkg):
+    data = json.load(open(os.path.join(pkg, "data", "simple-icons.json"), encoding="utf-8"))
+    by_slug = {e["slug"]: e for e in data}
+    by_title = {}
+    for e in data:
+        by_title.setdefault(norm(e["title"]), e)
+        for a in (e.get("aliases") or {}).get("aka", []):
+            by_title.setdefault(norm(a), e)
+    out_dir = os.path.join(ROOT, "web", "logos")
+    os.makedirs(out_dir, exist_ok=True)
+    for old in os.listdir(out_dir):
+        if old.endswith(".svg"):
+            os.remove(os.path.join(out_dir, old))
+    with open(os.path.join(ROOT, "catalog", "catalog.txt"), encoding="utf-8") as fh:
+        cats = api.parse_catalog(fh.read())["categories"]
+    made, missing = [], []
+    for cat in cats:
+        for svc in cat["services"]:
+            entry = by_slug.get(ALIAS.get(svc["name"], "")) or by_title.get(norm(svc["name"]))
+            if not entry:
+                missing.append(svc["name"])
+                continue
+            svg = open(os.path.join(pkg, "icons", entry["slug"] + ".svg"), encoding="utf-8").read()
+            m = re.search(r'<path d="([^"]+)"', svg)
+            if not m:
+                missing.append(svc["name"])
+                continue
+            bg = entry["hex"].upper()
+            fg = "#111111" if luminance(bg) > 0.55 else "#ffffff"
+            tile = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256">'
+                    '<rect width="64" height="64" rx="14" fill="#%s"/>'
+                    '<g transform="translate(14 14) scale(1.4167)"><path fill="%s" d="%s"/></g></svg>\n' % (bg, fg, m.group(1)))
+            slug = api.logo_slug(svc["name"])
+            if slug not in made:
+                open(os.path.join(out_dir, slug + ".svg"), "w", encoding="utf-8").write(tile)
+                made.append(slug)
+    with open(os.path.join(out_dir, "LICENSE.txt"), "w", encoding="utf-8") as fh:
+        fh.write("Iconos de simple-icons (https://simpleicons.org), licencia CC0 1.0.\n"
+                 "Las marcas y logotipos pertenecen a sus respectivos titulares.\n")
+    print("%d logos generados · %d servicios sin logo (usarán un monograma con su color)" % (len(made), len(missing)))
+
+
+if __name__ == "__main__":
+    main(sys.argv[1] if len(sys.argv) > 1 else "si/package")

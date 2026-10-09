@@ -5,6 +5,7 @@ import { openSubscriptionForm, openPaymentForm } from "./form.js";
 import {
   CYCLES, STATUS, PAY_STATUS, money, fmtDate, fmtMonth, fmtMonthShort, relativeDays,
   daysUntil, todayIso, toIso, fromIso, occurrences, share, monthlyCost, yearlyCost, hashColor, initial,
+  pendingCharges, logoFor,
 } from "./util.js";
 
 const view = document.getElementById("view");
@@ -52,11 +53,15 @@ function chargeChip(sub) {
   return badge(label, kind);
 }
 
+// Imagen de la suscripción: foto propia > logo del catálogo > monograma con su color.
+const imageOf = (s) => (s.has_photo ? photoSrc(s) : logoFor(s, state.catalog));
+
 function thumb(sub) {
-  if (sub.has_photo) {
-    return h("div", { class: "thumb" },
-      h("img", { class: "thumb-bg", src: photoSrc(sub), alt: "", "aria-hidden": "true", loading: "lazy" }),
-      h("img", { class: "thumb-fg", src: photoSrc(sub), alt: `Foto de ${sub.name}`, loading: "lazy" }));
+  const src = imageOf(sub);
+  if (src) {
+    return h("div", { class: sub.has_photo ? "thumb" : "thumb thumb-logo" },
+      h("img", { class: "thumb-bg", src, alt: "", "aria-hidden": "true", loading: "lazy" }),
+      h("img", { class: "thumb-fg", src, alt: `${sub.has_photo ? "Foto" : "Logo"} de ${sub.name}`, loading: "lazy" }));
   }
   return h("div", { class: "thumb thumb-ph", style: { "--c": colorOf(sub) } }, h("span", { text: initial(sub) }));
 }
@@ -128,7 +133,7 @@ function card(sub) {
 }
 
 async function viewHome(token) {
-  await loadSubs();
+  await Promise.all([loadSubs(), ensureCatalog().catch(() => null)]);
   if (token !== routeToken) return;
   const active = state.subs.filter((s) => s.status === "active");
   const month = active.reduce((a, s) => a + monthlyCost(s), 0);
@@ -200,17 +205,19 @@ function infoRow(label, value) {
 }
 
 async function viewDetail(token, id) {
-  const [data] = await Promise.all([api.get(`/subscriptions/${id}`)]);
+  const [data] = await Promise.all([api.get(`/subscriptions/${id}`), ensureCatalog().catch(() => null)]);
   if (token !== routeToken) return;
   const sub = data.subscription;
   state.settings = data.settings;
   const pays = data.payments;
   const doneTotal = pays.filter((p) => p.status === "done").reduce((a, p) => a + p.amount, 0);
-  const future = occurrences(sub, todayIso(), toIso(new Date(new Date().getFullYear() + 3, 0, 1))).slice(0, 4);
+  const future = pendingCharges(sub, pays, toIso(new Date(new Date().getFullYear() + 3, 0, 1))).slice(0, 6);
+  const logo = sub.has_photo ? "" : logoFor(sub, state.catalog);
 
   const frame = sub.has_photo
     ? h("div", { class: "photo-frame", style: { "--ar": (sub.photo_w / sub.photo_h).toFixed(5) } },
       h("img", { src: photoSrc(sub), alt: `Foto de ${sub.name}`, width: sub.photo_w, height: sub.photo_h }))
+    : logo ? h("div", { class: "photo-frame photo-logo", style: { "--ar": "1" } }, h("img", { src: logo, alt: `Logo de ${sub.name}`, width: 256, height: 256 }))
     : h("div", { class: "photo-frame photo-ph", style: { "--ar": "1.6", "--c": colorOf(sub) } }, h("span", { text: initial(sub) }));
 
   const reload = () => refresh();
@@ -272,18 +279,25 @@ async function viewDetail(token, id) {
         h("button", { type: "button", class: "btn btn-sm", onclick: () => openPaymentForm({ subId: id, defaultAmount: sub.price, onSaved: reload }) }, icon("plus", 14), " Añadir pago")),
       pays.length ? h("div", { class: "pay-list" }, pays.map(payRow)) : h("p", { class: "muted", text: "Todavía no hay pagos registrados. Usa «Registrar cobro» cuando se cargue el recibo." })),
     future.length ? h("section", { class: "panel" },
-      h("h2", { text: "Próximos cobros previstos" }),
-      h("ul", { class: "plain-list" }, future.map((d) => h("li", {}, h("span", { text: fmtDate(d) }), h("span", { class: "muted", text: relativeDays(daysUntil(d)) }), h("strong", { text: money(sub.price) }))))) : null);
+      h("h2", { text: "Próximos cobros" }),
+      h("p", { class: "muted", text: "Todo lo que aún no figura como pagado en el historial." }),
+      h("ul", { class: "plain-list" }, future.map((c) => {
+        const d = daysUntil(c.date);
+        return h("li", { class: d < 0 ? "is-overdue" : "" },
+          h("span", { text: fmtDate(c.date) }),
+          h("span", { class: "muted", text: (d < 0 ? "vencido " : "") + relativeDays(d) + (c.paymentId ? " · programado" : "") }),
+          h("strong", { text: money(c.amount) }));
+      }))) : null);
 }
 
 // ---------------------------------------------------------------- cobros
 async function viewCharges(token, horizon = 90) {
-  await loadSubs();
+  const [, { payments }] = await Promise.all([Promise.all([loadSubs(), ensureCatalog().catch(() => null)]), api.get("/payments")]);
   if (token !== routeToken) return;
   const end = new Date(); end.setDate(end.getDate() + horizon);
   const endIso = toIso(end);
   const rows = [];
-  for (const s of state.subs) for (const d of occurrences(s, "2000-01-01", endIso)) rows.push({ date: d, sub: s });
+  for (const s of state.subs) for (const c of pendingCharges(s, payments, endIso)) rows.push({ date: c.date, sub: s, amount: c.amount, paymentId: c.paymentId });
   rows.sort((a, b) => a.date.localeCompare(b.date) || a.sub.name.localeCompare(b.sub.name, "es"));
   const groups = new Map();
   for (const r of rows) {
@@ -291,6 +305,10 @@ async function viewCharges(token, horizon = 90) {
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(r);
   }
+  const markPaid = async (r) => {
+    if (!r.paymentId) return registerPayment(r.sub);
+    try { await api.put(`/payments/${r.paymentId}`, { status: "done" }); toast("Pago marcado como realizado."); await refresh(); } catch (err) { toast(err.message, "error"); }
+  };
   const sel = h("select", { "aria-label": "Horizonte", onchange: (e) => viewCharges(++routeToken, Number(e.target.value)) },
     ...[30, 60, 90, 180, 365].map((d) => h("option", { value: d, text: `Próximos ${d} días` })));
   sel.value = String(horizon);
@@ -299,17 +317,17 @@ async function viewCharges(token, horizon = 90) {
     h("div", { class: "page-head" }, h("h1", { text: "Próximos cobros" }), sel),
     rows.length ? [...groups.entries()].map(([month, list]) => h("section", { class: "panel" },
       h("div", { class: "panel-head" }, h("h2", { class: "cap", text: fmtMonth(month) }),
-        h("strong", { text: money(list.reduce((a, r) => a + r.sub.price, 0)) })),
+        h("strong", { text: money(list.reduce((a, r) => a + r.amount, 0)) })),
       h("ul", { class: "plain-list charges" }, list.map((r) => {
         const d = daysUntil(r.date);
         const overdue = r.date < today;
         return h("li", { class: overdue ? "is-overdue" : "" },
           h("span", { class: "ch-date", text: fmtDate(r.date) }),
           h("a", { class: "ch-name", href: `#/s/${r.sub.id}`, text: r.sub.name }),
-          h("span", { class: "muted ch-rel", text: overdue ? `vencido ${relativeDays(d)}` : relativeDays(d) }),
-          h("strong", { class: "ch-amount", text: money(r.sub.price) }),
-          overdue && r.date === r.sub.next_charge ? h("button", { type: "button", class: "btn btn-sm", onclick: () => registerPayment(r.sub) }, "Registrar") : null);
-      })))) : h("div", { class: "empty" }, h("h2", { text: "No hay cobros previstos" }), h("p", { text: "Las suscripciones activas con fecha de próximo cobro aparecen aquí." })));
+          h("span", { class: "muted ch-rel", text: (overdue ? `vencido ${relativeDays(d)}` : relativeDays(d)) + (r.paymentId ? " · programado" : "") }),
+          h("strong", { class: "ch-amount", text: money(r.amount) }),
+          r.paymentId || r.date === r.sub.next_charge ? h("button", { type: "button", class: "btn btn-sm", onclick: () => markPaid(r) }, icon("check", 14), r.paymentId ? " Pagado" : " Registrar") : h("span"));
+      })))) : h("div", { class: "empty" }, h("h2", { text: "No hay cobros previstos" }), h("p", { text: "Aquí aparece todo lo que aún no figura como pagado en el historial." })));
 }
 
 // ---------------------------------------------------------------- estadísticas
@@ -345,7 +363,7 @@ async function viewStats(token) {
   for (let i = 0; i < 12; i++) months.push(toIso(new Date(now.getFullYear(), now.getMonth() + i, 1)).slice(0, 7));
   const forecast = months.map((m) => {
     const from = m + "-01", to = toIso(new Date(Number(m.slice(0, 4)), Number(m.slice(5)), 0));
-    return { label: fmtMonthShort(m), value: sum(active, (s) => occurrences(s, from, to).length * share(s)) };
+    return { label: fmtMonthShort(m), value: sum(active, (s) => sum(pendingCharges(s, payments, to).filter((c) => c.date >= from), (c) => c.amount / (s.people || 1))) };
   });
   const subMap = new Map(state.subs.map((s) => [s.id, s]));
   const past = [];
