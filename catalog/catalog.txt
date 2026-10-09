@@ -59,6 +59,42 @@
 - Suscripción Nivel 1
 # Eurosport | https://www.eurosport.es | #003087
 - Mensual
+# Hulu | https://www.hulu.com | #1ce783
+- Hulu (With Ads)
+- Hulu (No Ads)
+# Peacock | https://www.peacocktv.com | #111111
+- Premium
+- Premium Plus
+# Paramount+ | https://www.paramountplus.com | #0064ff
+- Essential
+- Premium
+# AMC+ | https://www.amcplus.com | #1a1a1a
+# Starz | https://www.starz.com | #111111
+# BritBox | https://www.britbox.com | #e8004c
+# Shudder | https://www.shudder.com | #ec1c24
+# Hayu | https://www.hayu.com | #ff2d55
+# CuriosityStream | https://curiositystream.com | #f9b218
+# Gaia | https://www.gaia.com | #3a7a7a
+# Rakuten Viki | https://www.viki.com | #00b9f1
+# HIDIVE | https://www.hidive.com | #00aeef
+# Plex | https://www.plex.tv | #e5a00d
+- Plex Pass
+# Emby | https://emby.media | #52b54b
+- Emby Premiere
+# F1 TV | https://f1tv.formula1.com | #e10600
+- Access
+- Pro
+- Premium
+# MotoGP VideoPass | https://www.motogp.com | #e10600
+# NBA League Pass | https://www.nba.com/watch/league-pass-stream | #1d428a
+# NFL+ | https://www.nfl.com/plus | #013369
+# Eleven Sports | https://www.elevensports.com | #00d1ff
+# YouTube TV | https://tv.youtube.com | #ff0000
+# Orange TV | https://www.orange.es | #ff7900
+# Vodafone TV | https://www.vodafone.es | #e60000
+# Telecable | https://www.telecable.es | #00a1e0
+# Nebula | https://nebula.tv | #00b2ff
+# Discovery+ | https://www.discoveryplus.com | #2175d9
 
 == Música y podcasts
 # Spotify | https://www.spotify.com | #1db954
@@ -96,6 +132,41 @@
 - Familiar
 # Patreon | https://www.patreon.com | #f96854
 - Apoyo a creador
+# Napster | https://www.napster.com | #111111
+# Anghami | https://www.anghami.com | #a31ffa
+# Pandora | https://www.pandora.com | #224099
+- Plus
+- Premium
+# iHeartRadio | https://www.iheart.com | #c6002b
+- All Access
+- Plus
+# TuneIn | https://tunein.com | #14d8cc
+- Premium
+# Idagio | https://www.idagio.com | #1f1f1f
+# Beatport | https://www.beatport.com | #01ff95
+- Streaming
+# Epidemic Sound | https://www.epidemicsound.com | #111111
+# Artlist | https://artlist.io | #ffd400
+# Splice | https://splice.com | #5de0c6
+# iVoox | https://www.ivoox.com | #ff6600
+- iVoox Premium
+# Podimo | https://podimo.com | #ff5a5f
+# Last.fm | https://www.last.fm | #d51007
+- Pro
+# Yousician | https://yousician.com | #ff7a00
+- Premium
+- Premium+
+# Simply Piano | https://www.hellosimply.com | #ff3b6b
+# Fender Play | https://www.fender.com/play | #d6001c
+# Ultimate Guitar | https://www.ultimate-guitar.com | #ffc600
+- Pro
+# Skoove | https://www.skoove.com | #e63e6d
+# flowkey | https://www.flowkey.com | #6e00ff
+# Chordify | https://chordify.net | #ff6b6b
+- Premium
+# Moises | https://moises.ai | #6f4cff
+- Premium
+- Pro
 
 == Videojuegos
 # PlayStation Plus | https://www.playstation.com | #003791
@@ -126,6 +197,31 @@
 - Suscripción
 # Final Fantasy XIV | https://www.finalfantasyxiv.com | #a0212b
 - Suscripción
+# Google Play Pass | https://play.google.com/store/pass | #34a853
+# Amazon Luna | https://luna.amazon.com | #00a8e1
+# Humble Choice | https://www.humblebundle.com | #cc2929
+# Roblox | https://www.roblox.com | #e2231a
+- Roblox Premium
+# Minecraft Realms | https://www.minecraft.net | #62b47a
+- Realms Plus
+# Fortnite Crew | https://www.fortnite.com | #7c4dff
+# Elder Scrolls Online | https://www.elderscrollsonline.com | #c0a060
+- ESO Plus
+# RuneScape | https://www.runescape.com | #d4af37
+- Membresía
+# Old School RuneScape | https://oldschool.runescape.com | #b8860b
+- Membresía
+# EVE Online | https://www.eveonline.com | #00a3e0
+- Omega
+# Boosteroid | https://boosteroid.com | #2b6cff
+# Shadow PC | https://shadow.tech | #0b0b0b
+# Meta Quest+ | https://www.meta.com/quest/quest-plus | #0866ff
+# Viveport Infinity | https://www.viveport.com | #00b2ff
+# Chess.com | https://www.chess.com | #81b64c
+- Gold
+- Platinum
+- Diamond
+# Twitch Turbo | https://www.twitch.tv/turbo | #9146ff
 
 == Nube y almacenamiento
 # Apple One | https://www.apple.com/es/apple-one | #1d1d1f
@@ -158,6 +254,22 @@
 - Pro III
 # Backblaze | https://www.backblaze.com | #e21e26
 - Computer Backup
+# Box | https://www.box.com | #0061d5
+- Personal Pro
+- Business
+# Sync.com | https://www.sync.com | #00b9ff
+# Tresorit | https://tresorit.com | #e5ff5a
+# IDrive | https://www.idrive.com | #1a6fc9
+# Icedrive | https://icedrive.net | #3d6dff
+# Koofr | https://koofr.eu | #0e9ae6
+# Filen | https://filen.io | #1e88e5
+# Internxt | https://internxt.com | #0066ff
+# Synology C2 | https://c2.synology.com | #4a90e2
+# WeTransfer | https://wetransfer.com | #409fff
+- Pro
+# Livedrive | https://www.livedrive.com | #00a4e4
+# CrashPlan | https://www.crashplan.com | #0c4da2
+# Carbonite | https://www.carbonite.com | #2e8bff
 
 == Software y productividad
 # Microsoft 365 | https://www.microsoft.com/microsoft-365 | #d83b01
@@ -215,6 +327,161 @@
 # Setapp | https://setapp.com | #e6a700
 - Mac
 - Mac + iOS
+# Google Workspace | https://workspace.google.com | #4285f4
+- Business Starter
+- Business Standard
+- Business Plus
+# Zoho | https://www.zoho.com | #e42527
+# LastPass | https://www.lastpass.com | #d32d27
+- Premium
+- Families
+# Keeper | https://www.keepersecurity.com | #ffc700
+- Personal
+- Family
+# NordPass | https://nordpass.com | #4687ff
+- Premium
+- Family
+# Enpass | https://www.enpass.io | #0070ff
+# RoboForm | https://www.roboform.com | #0d6ed1
+# Craft | https://www.craft.do | #8b5cf6
+# Bear | https://bear.app | #dd4c4f
+- Pro
+# Ulysses | https://ulysses.app | #1ba8d5
+# Drafts | https://getdrafts.com | #3a86ff
+- Drafts Pro
+# Fantastical | https://flexibits.com/fantastical | #e4003a
+- Premium
+# Spark | https://sparkmailapp.com | #0098ff
+- Premium
+# Superhuman | https://superhuman.com | #8b5cf6
+# HEY | https://www.hey.com | #5b3df5
+# Fastmail | https://www.fastmail.com | #3984c6
+- Standard
+- Professional
+# TickTick | https://ticktick.com | #4772fa
+- Premium
+# Any.do | https://www.any.do | #4d83f7
+# Trello | https://trello.com | #0052cc
+- Standard
+- Premium
+# Asana | https://asana.com | #f06a6a
+- Starter
+- Advanced
+# monday.com | https://monday.com | #ff3d57
+- Basic
+- Standard
+- Pro
+# ClickUp | https://clickup.com | #7b68ee
+- Unlimited
+- Business
+# Airtable | https://airtable.com | #18bfff
+- Team
+- Business
+# Linear | https://linear.app | #5e6ad2
+# Jira | https://www.atlassian.com/software/jira | #0052cc
+# Confluence | https://www.atlassian.com/software/confluence | #172b4d
+# Miro | https://miro.com | #ffd02f
+- Starter
+- Business
+# Lucidchart | https://www.lucidchart.com | #f97316
+# Loom | https://www.loom.com | #625df5
+- Business
+# Calendly | https://calendly.com | #006bff
+- Standard
+- Teams
+# Zapier | https://zapier.com | #ff4a00
+- Professional
+- Team
+# IFTTT | https://ifttt.com | #111111
+- Pro
+- Pro+
+# Make | https://www.make.com | #6d00cc
+# Webex | https://www.webex.com | #00bceb
+# Adobe Lightroom | https://lightroom.adobe.com | #31a8ff
+# Adobe After Effects | https://www.adobe.com/products/aftereffects.html | #9999ff
+# Adobe Express | https://www.adobe.com/express | #ff61f6
+# Adobe Stock | https://stock.adobe.com | #ff0000
+# Affinity | https://affinity.serif.com | #1b72be
+# Sketch | https://www.sketch.com | #fdad00
+# Framer | https://www.framer.com | #0099ff
+# Descript | https://www.descript.com | #9b6dff
+- Hobbyist
+- Creator
+# CapCut | https://www.capcut.com | #111111
+- Pro
+# Filmora | https://filmora.wondershare.com | #00d1c1
+# Envato Elements | https://elements.envato.com | #81b441
+# Freepik | https://www.freepik.com | #1273eb
+- Premium
+- Premium+
+# Shutterstock | https://www.shutterstock.com | #ee2b24
+# Storyblocks | https://www.storyblocks.com | #ff7a00
+# QuillBot | https://quillbot.com | #4caf50
+- Premium
+# Wordtune | https://www.wordtune.com | #7c3aed
+# Otter.ai | https://otter.ai | #0a66ff
+- Pro
+- Business
+# Rev | https://www.rev.com | #ff5c3a
+# Jasper | https://www.jasper.ai | #ff7a59
+# Smallpdf | https://smallpdf.com | #4f7cff
+- Pro
+# iLovePDF | https://www.ilovepdf.com | #e5322d
+- Premium
+# PDFelement | https://pdf.wondershare.com | #ff7b00
+# Foxit | https://www.foxit.com | #ef5a26
+# GitLab | https://about.gitlab.com | #fc6d26
+- Premium
+- Ultimate
+# Replit | https://replit.com | #f26207
+- Core
+# Postman | https://www.postman.com | #ff6c37
+- Basic
+- Professional
+# Docker | https://www.docker.com | #2496ed
+- Pro
+- Team
+# Tailscale | https://tailscale.com | #1a1a1a
+# ngrok | https://ngrok.com | #1f1e37
+- Personal
+# Sentry | https://sentry.io | #362d59
+# CleanMyMac | https://macpaw.com/cleanmymac | #6dd5fa
+# Parallels Desktop | https://www.parallels.com | #cc0000
+# Raycast | https://www.raycast.com | #ff6363
+- Pro
+# Holded | https://www.holded.com | #f4528b
+# Quipu | https://getquipu.com | #00a99d
+# Billin | https://www.billin.net | #3a64f6
+# Factorial | https://factorialhr.es | #e51943
+# Xolo | https://www.xolo.io | #00a3ad
+# Contasimple | https://www.contasimple.com | #00a0e3
+# Anfix | https://www.anfix.com | #0068ff
+# Sage | https://www.sage.com | #00d639
+# QuickBooks | https://quickbooks.intuit.com | #2ca01c
+# FreshBooks | https://www.freshbooks.com | #0075dd
+# DocuSign | https://www.docusign.com | #ffcc22
+- Personal
+- Standard
+# Typeform | https://www.typeform.com | #262627
+# SurveyMonkey | https://www.surveymonkey.com | #00bf6f
+# Buffer | https://buffer.com | #168eea
+# Hootsuite | https://www.hootsuite.com | #143059
+# Later | https://later.com | #5a4bff
+# Linktree | https://linktr.ee | #43e660
+- Starter
+- Pro
+# Readwise | https://readwise.io | #fcd34d
+# Pocket | https://getpocket.com | #ef4056
+- Premium
+# Instapaper | https://www.instapaper.com | #1f1f1f
+- Premium
+# Feedly | https://feedly.com | #2bb24c
+- Pro
+# Inoreader | https://www.inoreader.com | #1875f3
+# Microsoft Teams | https://www.microsoft.com/microsoft-teams | #6264a7
+# Microsoft Visio | https://www.microsoft.com/microsoft-365/visio | #3955a3
+# Microsoft Project | https://www.microsoft.com/microsoft-365/project | #31752f
+# Apple Developer Program | https://developer.apple.com | #0071e3
 
 == Inteligencia artificial
 # ChatGPT | https://chatgpt.com | #10a37f
@@ -248,6 +515,56 @@
 - Creator
 # Grok | https://grok.com | #111111
 - SuperGrok
+# Mistral Le Chat | https://chat.mistral.ai | #fa520f
+- Pro
+- Team
+# Poe | https://poe.com | #5b3df5
+# Character.AI | https://character.ai | #111111
+- c.ai+
+# Replika | https://replika.com | #5b6cff
+- Pro
+# Suno | https://suno.com | #111111
+- Pro
+- Premier
+# Udio | https://www.udio.com | #111111
+- Standard
+- Pro
+# Runway | https://runwayml.com | #111111
+- Standard
+- Pro
+- Unlimited
+# Pika | https://pika.art | #ff3d8b
+# Leonardo.Ai | https://leonardo.ai | #1d4ed8
+- Apprentice
+- Artisan
+- Maestro
+# Ideogram | https://ideogram.ai | #ff5a36
+- Basic
+- Plus
+- Pro
+# Krea | https://www.krea.ai | #111111
+# Notion AI | https://www.notion.so/product/ai | #111111
+# Fireflies.ai | https://fireflies.ai | #ff3d8b
+# HeyGen | https://www.heygen.com | #6a4cff
+# Synthesia | https://www.synthesia.io | #3b49df
+# Windsurf | https://windsurf.com | #0b7a75
+- Pro
+# Lovable | https://lovable.dev | #ff4d6d
+- Pro
+# Bolt.new | https://bolt.new | #111111
+- Pro
+# v0 | https://v0.dev | #111111
+- Premium
+# Kagi | https://kagi.com | #ffb319
+- Starter
+- Professional
+- Ultimate
+# You.com | https://you.com | #4a3aff
+# Phind | https://www.phind.com | #1da1f2
+# Granola | https://www.granola.ai | #111111
+# DeepSeek | https://www.deepseek.com | #4d6bfe
+# Microsoft 365 Copilot | https://www.microsoft.com/microsoft-365/copilot | #0f6cbd
+# Adobe Firefly | https://firefly.adobe.com | #ff0000
 
 == Noticias y lectura
 # El País | https://elpais.com | #1a1a1a
@@ -283,6 +600,61 @@
 - Premium
 # Perlego | https://www.perlego.com | #1c8eff
 - Individual
+# El Periódico | https://www.elperiodico.com | #00539f
+# Expansión | https://www.expansion.com | #f0a30a
+# Cinco Días | https://cincodias.elpais.com | #e60026
+# El Español | https://www.elespanol.com | #ff7a00
+# The Objective | https://theobjective.com | #1f1f1f
+# Público | https://www.publico.es | #e2001a
+- Socio/a
+# La Razón | https://www.larazon.es | #003e7e
+# Marca | https://www.marca.com | #d4001a
+- Marca Plus
+# AS | https://as.com | #e60026
+# Mundo Deportivo | https://www.mundodeportivo.com | #e2001a
+# Sport | https://www.sport.es | #e2001a
+# La Voz de Galicia | https://www.lavozdegalicia.es | #00539f
+# Heraldo de Aragón | https://www.heraldo.es | #00539f
+# El Correo | https://www.elcorreo.com | #00539f
+# Diario Sur | https://www.diariosur.es | #00539f
+# Las Provincias | https://www.lasprovincias.es | #00539f
+# Ideal | https://www.ideal.es | #00539f
+# El Norte de Castilla | https://www.elnortedecastilla.es | #00539f
+# infoLibre | https://www.infolibre.es | #e2001a
+- Socio/a
+# CTXT | https://ctxt.es | #ff4f00
+- Suscriptor/a
+# El Salto | https://www.elsaltodiario.com | #e2001a
+- Socio/a
+# Newtral | https://www.newtral.es | #00a3e0
+# The Guardian | https://www.theguardian.com | #052962
+- Supporter
+# The Washington Post | https://www.washingtonpost.com | #111111
+# The Wall Street Journal | https://www.wsj.com | #0080c3
+# Bloomberg | https://www.bloomberg.com | #472a91
+# Le Monde | https://www.lemonde.fr | #111111
+# Der Spiegel | https://www.spiegel.de | #e64415
+# WIRED | https://www.wired.com | #111111
+# The Atlantic | https://www.theatlantic.com | #111111
+# The New Yorker | https://www.newyorker.com | #111111
+# Harvard Business Review | https://hbr.org | #c8102e
+# TIME | https://time.com | #e90606
+# National Geographic | https://www.nationalgeographic.com | #ffcc00
+# Muy Interesante | https://www.muyinteresante.com | #0067b1
+# Substack | https://substack.com | #ff6719
+# Apple News+ | https://www.apple.com/apple-news | #fa243c
+# Wattpad | https://www.wattpad.com | #ff500a
+- Premium
+# Nextory | https://nextory.com | #ff5a5f
+# BookBeat | https://www.bookbeat.com | #ff2d5f
+# Marvel Unlimited | https://www.marvel.com/unlimited | #ec1d24
+# Shonen Jump | https://www.viz.com | #e60012
+# Manga Plus | https://mangaplus.shueisha.co.jp | #e60012
+# Letterboxd | https://letterboxd.com | #00e054
+- Pro
+- Patron
+# Trakt | https://trakt.tv | #ed1c24
+- VIP
 
 == Formación e idiomas
 # Duolingo | https://www.duolingo.com | #58cc02
@@ -308,6 +680,47 @@
 - Familiar
 # LinkedIn Learning | https://www.linkedin.com/learning | #0a66c2
 - Mensual
+# Udemy | https://www.udemy.com | #a435f0
+- Personal Plan
+# Pluralsight | https://www.pluralsight.com | #f15b2a
+# DataCamp | https://www.datacamp.com | #03ef62
+# Codecademy | https://www.codecademy.com | #1f4056
+- Plus
+- Pro
+# Brilliant | https://brilliant.org | #5cb85c
+# Rosetta Stone | https://www.rosettastone.com | #ffd400
+# Memrise | https://www.memrise.com | #f0ad4e
+# Lingoda | https://www.lingoda.com | #f26b21
+# Preply | https://preply.com | #ff5a5f
+# Cambly | https://www.cambly.com | #ff6d3b
+# Mondly | https://www.mondly.com | #fe5e41
+# Pimsleur | https://www.pimsleur.com | #1f9cd8
+# Speak | https://www.speak.com | #111111
+# Open English | https://www.openenglish.com | #ff5a00
+# Wall Street English | https://www.wallstreetenglish.com | #e2001a
+# Photomath | https://photomath.com | #fe3c72
+- Plus
+# Wolfram Alpha | https://www.wolframalpha.com | #dd1100
+- Pro
+# Quizlet | https://quizlet.com | #4257b2
+- Plus
+# Chegg | https://www.chegg.com | #eb7100
+# Studocu | https://www.studocu.com | #1a73e8
+# Wuolah | https://www.wuolah.com | #6c4cff
+- Premium
+# Crehana | https://www.crehana.com | #6a2cff
+# OpenWebinars | https://openwebinars.net | #ff6f3c
+# Udacity | https://www.udacity.com | #02b3e4
+# Treehouse | https://teamtreehouse.com | #5fcf80
+# Frontend Masters | https://frontendmasters.com | #c02d28
+# Egghead | https://egghead.io | #2563eb
+# Laracasts | https://laracasts.com | #f55247
+# Wondrium | https://www.wondrium.com | #00a3e0
+# Headway | https://makeheadway.com | #ff6b6b
+# Imprint | https://imprint.co | #5b3df5
+# Amazon Kids+ | https://www.amazon.es/kids-plus | #ff9900
+# Epic! | https://www.getepic.com | #ffcb05
+# ABCmouse | https://www.abcmouse.com | #ff6a00
 
 == Salud, deporte y bienestar
 # Altafit | https://www.altafit.es | #e30613
@@ -353,6 +766,49 @@
 - Coach
 # Flo | https://flo.health | #ff4f81
 - Premium
+# Fitbod | https://fitbod.me | #1f2937
+# Strong | https://www.strong.app | #1f2937
+- Pro
+# Hevy | https://www.hevyapp.com | #2563eb
+- Pro
+# Zwift | https://www.zwift.com | #fc6719
+# TrainingPeaks | https://www.trainingpeaks.com | #0072ce
+- Premium
+# Garmin Connect+ | https://www.garmin.com | #007cc3
+# WHOOP | https://www.whoop.com | #111111
+- One
+- Peak
+- Life
+# Oura | https://ouraring.com | #111111
+- Membresía
+# Noom | https://www.noom.com | #ffb400
+# WW (Weight Watchers) | https://www.weightwatchers.com | #0033ff
+# YAZIO | https://www.yazio.com | #ff7a00
+- Pro
+# Lifesum | https://lifesum.com | #00a3a1
+- Premium
+# Cronometer | https://cronometer.com | #ff6a00
+- Gold
+# Les Mills+ | https://www.lesmills.com | #111111
+# Beachbody On Demand | https://www.beachbodyondemand.com | #00aeef
+# Down Dog | https://www.downdogapp.com | #00bfa5
+# Insight Timer | https://insighttimer.com | #f2994a
+- Plus
+# Waking Up | https://www.wakingup.com | #1f2937
+# Ten Percent Happier | https://www.tenpercent.com | #ffd24c
+# BetterHelp | https://www.betterhelp.com | #7bc47f
+# Clue | https://helloclue.com | #f2547d
+- Plus
+# Natural Cycles | https://www.naturalcycles.com | #ff5a6e
+# Sleep Cycle | https://www.sleepcycle.com | #1c2a4a
+- Premium
+# Wikiloc | https://es.wikiloc.com | #2e7d32
+- Premium
+# Komoot | https://www.komoot.com | #6aa84f
+- Premium
+# AllTrails | https://www.alltrails.com | #428a13
+- Plus
+- Peak
 
 == Telefonía e internet
 # Movistar | https://www.movistar.es | #019df4
@@ -398,6 +854,40 @@
 # Starlink | https://www.starlink.com | #111111
 - Residencial
 - Roam
+# Euskaltel | https://www.euskaltel.com | #ff7a00
+# R | https://www.r.es | #e30613
+# Avatel | https://www.avatel.es | #e30613
+# Adamo | https://adamo.es | #e30613
+# Virgin telco | https://www.virgintelco.es | #e10a0a
+# Hits Mobile | https://www.hitsmobile.es | #ff3b3b
+# Tuenti | https://www.tuenti.es | #0050f0
+# Llamaya | https://www.llamaya.es | #00a0e0
+# Lebara | https://www.lebara.es | #00a1e0
+# PTV Telecom | https://ptvtelecom.com | #e30613
+# Eroski móvil | https://www.eroskimovil.es | #e30613
+# Carrefour móvil | https://www.carrefourmovil.es | #0b3a7d
+# Soyou | https://www.soyou.es | #ff7900
+# Amena | https://www.amena.com | #ff7900
+# Movistar Prosegur Alarmas | https://www.movistarprosegur.es | #019df4
+# Telefónica | https://www.telefonica.com | #0066ff
+# Vodafone UK | https://www.vodafone.co.uk | #e60000
+# EE | https://ee.co.uk | #00a1e0
+# Three | https://www.three.co.uk | #111111
+# O2 UK | https://www.o2.co.uk | #0019a5
+# Orange France | https://www.orange.fr | #ff7900
+# SFR | https://www.sfr.fr | #e2001a
+# Free | https://www.free.fr | #cd1e25
+# Bouygues Telecom | https://www.bouyguestelecom.fr | #00a0e0
+# TIM | https://www.tim.it | #0b2c8f
+# Telekom | https://www.telekom.de | #e20074
+# T-Mobile | https://www.t-mobile.com | #e20074
+# Verizon | https://www.verizon.com | #cd040b
+# AT&T | https://www.att.com | #009fdb
+# Claro | https://www.claro.com | #e30613
+# Tigo | https://www.tigo.com | #00377d
+# Airalo (eSIM) | https://www.airalo.com | #ff4d6d
+# Holafly (eSIM) | https://esim.holafly.com | #ff6b00
+# Ubigi (eSIM) | https://www.ubigi.com | #00a3e0
 
 == Hogar y suministros
 # Iberdrola | https://www.iberdrola.es | #3da435
@@ -427,6 +917,43 @@
 - Monitorización
 # Canal de Isabel II | https://www.canaldeisabelsegunda.es | #0072bc
 - Agua
+# Plenitude | https://www.eniplenitude.es | #ffd100
+- Luz
+- Gas
+# Gesternova | https://gesternova.com | #00a651
+# Som Energia | https://www.somenergia.coop | #8cc63f
+# Factor Energía | https://www.factorenergia.com | #ff6a00
+# Aldro Energía | https://www.aldroenergia.es | #00a3e0
+# Podo | https://www.podo.com | #ff3d7f
+# Lucera | https://www.lucera.es | #ffcc00
+# Nexus Energía | https://www.nexusenergia.com | #00539f
+# Audax Energía | https://www.audaxenergia.com | #00539f
+# Gana Energía | https://www.ganaenergia.com | #ffcc00
+# Pepeenergy | https://www.pepeenergy.com | #ff3366
+# Acciona Energía | https://www.acciona-energia.com | #e30613
+# EDP | https://www.edp.com | #00a3e0
+# Moeve (Cepsa) | https://www.moeveglobal.com | #ff7a00
+# Butano (Repsol) | https://www.repsol.es | #ff8200
+# Aigües de Barcelona | https://www.aiguesdebarcelona.cat | #00a3e0
+# Emasesa | https://www.emasesa.com | #00a3e0
+# Emivasa (Aguas de Valencia) | https://www.aguasdevalencia.es | #00a3e0
+# Hidralia | https://www.hidralia.es | #00a3e0
+# Aqualia | https://www.aqualia.com | #00a3e0
+# Agbar | https://www.agbar.es | #00a3e0
+# HomeServe | https://www.homeserve.es | #00a1e0
+# Verisure | https://www.verisure.es | #e30613
+# Sector Alarm | https://www.sectoralarm.es | #e30613
+# Ring | https://ring.com | #1c90f3
+- Ring Protect Basic
+- Ring Protect Plus
+- Ring Protect Pro
+# Arlo | https://www.arlo.com | #00a6a6
+- Arlo Secure
+# Wyze | https://www.wyze.com | #1de9b6
+- Cam Plus
+# eufy | https://www.eufy.com | #00a3e0
+# Tado | https://www.tado.com | #ff6a00
+- Auto-Assist
 
 == Seguros
 # Mapfre | https://www.mapfre.es | #d81e05
@@ -472,6 +999,57 @@
 - Hogar
 # Mutua de Propietarios | https://www.mutuadepropietarios.es | #00549f
 - Hogar
+# Zurich | https://www.zurich.es | #2167ae
+- Coche
+- Hogar
+- Salud
+# Liberty Seguros | https://www.libertyseguros.es | #1a1446
+- Coche
+- Hogar
+# Ocaso | https://www.ocaso.es | #00539f
+- Hogar
+- Salud
+- Vida
+# Reale Seguros | https://www.reale.es | #e30613
+- Coche
+- Hogar
+# Santalucía | https://www.santalucia.es | #00539f
+- Decesos
+- Hogar
+- Salud
+# Caser | https://www.caser.es | #00a3e0
+- Coche
+- Hogar
+- Salud
+# Helvetia | https://www.helvetia.com/es | #c8102e
+# Plus Ultra Seguros | https://www.plusultra.es | #e30613
+# Catalana Occidente | https://www.catalanaoccidente.com | #00539f
+# Seguros Bilbao | https://www.segurosbilbao.com | #00539f
+# FIATC | https://www.fiatc.es | #00539f
+# Hiscox | https://www.hiscox.es | #e30613
+# Cigna | https://www.cigna.es | #e87722
+# Alan | https://alan.com | #5b3df5
+# Direct Seguros | https://www.directseguros.es | #e30613
+# Regal Seguros | https://www.regalseguros.es | #e30613
+# Admiral Seguros | https://www.admiralseguros.es | #e30613
+# Hello Auto | https://www.helloauto.es | #00a3e0
+# Qover | https://www.qover.com | #1a1446
+# Iati | https://www.iatiseguros.com | #00a3e0
+# Mondial Assistance | https://www.mondial-assistance.es | #e30613
+# Europ Assistance | https://www.europ-assistance.es | #00539f
+# RACE | https://www.race.es | #e30613
+- Asistencia en carretera
+# RACC | https://www.racc.es | #e30613
+- Socio
+# Santander Seguros | https://www.santander.com | #ec0000
+# BBVA Seguros | https://www.bbva.es | #004481
+# SegurCaixa Adeslas | https://www.segurcaixaadeslas.es | #e30613
+# Barkibu | https://www.barkibu.com | #ff6b6b
+- Seguro de mascotas
+# AppleCare+ | https://www.apple.com/es/support/products | #1d1d1f
+- AppleCare+
+- AppleCare One
+# Samsung Care+ | https://www.samsung.com/es | #1428a0
 
 == Transporte y movilidad
 # Abono Transporte Madrid | https://www.crtm.es | #d6001c
@@ -495,6 +1073,49 @@
 - Plaza de garaje
 # Peaje (Telepeaje) | | #78909c
 - Cuota
+# Flightradar24 | https://www.flightradar24.com | #ffcb05
+- Silver
+- Gold
+- Business
+# Citymapper | https://citymapper.com | #1fbf6f
+# Abono Transporte Barcelona | https://www.tmb.cat | #e30613
+- T-usual
+- T-jove
+- T-familiar
+# Abono Transporte Valencia | https://www.metrovalencia.es | #e30613
+# Abono Transporte Sevilla | https://www.tussam.es | #e30613
+# Abono Renfe (Cercanías) | https://www.renfe.com | #8c0c5f
+# Abono Único (Renfe) | https://www.renfe.com | #8c0c5f
+# FREE NOW | https://www.free-now.com | #e5004b
+# Bolt | https://bolt.eu | #34d186
+# Lime | https://www.li.me | #00de00
+- Lime Pass
+# Bird | https://www.bird.co | #111111
+# Voi | https://www.voi.com | #f26964
+- Voi Pass
+# Reby | https://reby.co | #00c389
+# Cooltra | https://www.cooltra.com | #e30613
+# Zity | https://www.zity.eco | #00a3e0
+# Free2Move | https://free2move.com | #00a3e0
+# Share Now | https://www.share-now.com | #00a3e0
+# Ryanair Prime | https://www.ryanair.com | #073590
+- Prime
+# Wizz Air | https://wizzair.com | #c6007e
+- Wizz Discount Club
+- Wizz Multipass
+# easyJet Plus | https://www.easyjet.com | #ff6600
+# Vueling | https://www.vueling.com | #ffcc00
+- Vueling Club
+# Priority Pass | https://www.prioritypass.com | #003366
+- Standard
+- Standard Plus
+- Prestige
+# Tesla Premium Connectivity | https://www.tesla.com | #cc0000
+# Seat / Cupra Connect | https://www.seat.es | #003e7e
+# Toyota Connected | https://www.toyota.es | #eb0a1e
+# Kia Connect | https://www.kia.com/es | #05141f
+# Hyundai Bluelink | https://www.hyundai.com/es | #002c5f
+# Via-T (telepeaje) | https://www.viat.es | #00a3e0
 
 == Banca y finanzas
 # Revolut | https://www.revolut.com | #0666eb
@@ -520,6 +1141,11 @@
 - Cuenta
 # PayPal | https://www.paypal.com | #003087
 - Suscripción recurrente
+# American Express | https://www.americanexpress.com | #006fcf
+- Gold
+- Platinum
+# Scalable Capital | https://scalable.capital | #5b3df5
+# Revolut Business | https://www.revolut.com/business | #0666eb
 
 == Compras y membresías
 # Amazon Prime | https://www.amazon.es/prime | #ff9900
@@ -537,6 +1163,23 @@
 - Pro
 # Decathlon | https://www.decathlon.es | #0082c3
 - Club
+# Prime Student | https://www.amazon.es/primestudent | #ff9900
+# ASOS Premier | https://www.asos.com | #2d2d2d
+# SHEIN Club | https://www.shein.com | #111111
+# Deliveroo Plus | https://deliveroo.es | #00ccbc
+# Wolt+ | https://wolt.com | #009de0
+# Rappi Prime | https://www.rappi.com | #ff441f
+# Cookidoo (Thermomix) | https://cookidoo.es | #7ab800
+- Cookidoo
+# HelloFresh | https://www.hellofresh.es | #91c11e
+# Marley Spoon | https://marleyspoon.es | #ff6a00
+# Chefly | https://www.chefly.es | #00a3e0
+# Gousto | https://www.gousto.co.uk | #ff6a00
+# Glossybox | https://www.glossybox.es | #e5007d
+# Birchbox | https://www.birchbox.es | #00a3e0
+# Dollar Shave Club | https://www.dollarshaveclub.com | #00a3e0
+# Harry's | https://www.harrys.com | #3b7dd8
+# Suscríbete y ahorra (Amazon) | https://www.amazon.es | #ff9900
 
 == Seguridad y VPN
 # NordVPN | https://nordvpn.com | #4687ff
@@ -574,6 +1217,38 @@
 # Malwarebytes | https://www.malwarebytes.com | #0d3ecc
 - Premium
 - Ultimate
+# Private Internet Access | https://www.privateinternetaccess.com | #4bb34b
+# CyberGhost | https://www.cyberghostvpn.com | #ffcc00
+# IPVanish | https://www.ipvanish.com | #111111
+# Windscribe | https://windscribe.com | #1a4d7c
+- Pro
+# TunnelBear | https://www.tunnelbear.com | #ffd800
+# Hotspot Shield | https://www.hotspotshield.com | #00a3e0
+# VyprVPN | https://www.vyprvpn.com | #00a3e0
+# hide.me | https://hide.me | #00a3e0
+# IVPN | https://www.ivpn.net | #00a3e0
+# PureVPN | https://www.purevpn.com | #4a2f9c
+# Atlas VPN | https://atlasvpn.com | #00a3e0
+# Avast | https://www.avast.com | #ff7800
+- Premium Security
+- Ultimate
+# AVG | https://www.avg.com | #00aeef
+- Internet Security
+- Ultimate
+# Avira | https://www.avira.com | #e30613
+- Prime
+# ESET | https://www.eset.com | #00a3e0
+- Home Security
+# F-Secure | https://www.f-secure.com | #00a3e0
+# Trend Micro | https://www.trendmicro.com | #d71921
+# Panda Dome | https://www.pandasecurity.com | #00a3e0
+# G DATA | https://www.gdata.es | #e30613
+# Aura | https://www.aura.com | #00a3e0
+# Incogni | https://incogni.com | #00a3e0
+# DeleteMe | https://joindeleteme.com | #00a3e0
+# NordLocker | https://nordlocker.com | #4687ff
+# Proton Pass | https://proton.me/pass | #6d4aff
+# ZeroTier | https://www.zerotier.com | #ffb354
 
 == Redes y comunidad
 # LinkedIn Premium | https://www.linkedin.com/premium | #0a66c2
@@ -602,3 +1277,104 @@
 # Meta Verified | https://about.meta.com/technologies/meta-verified | #0866ff
 - Facebook
 - Instagram
+# Reddit Premium | https://www.reddit.com | #ff4500
+# Hinge | https://hinge.co | #111111
+- HingeX
+# Badoo | https://badoo.com | #783bf9
+- Premium
+# Happn | https://www.happn.com | #ff6b6b
+# Grindr | https://www.grindr.com | #ffc800
+- XTRA
+- Unlimited
+# Feeld | https://feeld.co | #e5316d
+- Majestic
+# Meetic | https://www.meetic.es | #e5004b
+# eDarling | https://www.edarling.es | #e5004b
+# Parship | https://www.parship.es | #c8102e
+# LOVOO | https://www.lovoo.com | #e5004b
+# Match | https://www.match.com | #1ec7a4
+# OkCupid | https://www.okcupid.com | #0500be
+# Ko-fi | https://ko-fi.com | #ff5e5b
+# Skool | https://www.skool.com | #111111
+# Circle | https://circle.so | #5b3df5
+# YouTube Membresías | https://www.youtube.com | #ff0000
+# Real Madrid (socio) | https://www.realmadrid.com | #febe10
+# FC Barcelona (soci) | https://www.fcbarcelona.com | #a50044
+# Atlético de Madrid (abonado) | https://www.atleticodemadrid.com | #cb3524
+# Sevilla FC (abonado) | https://www.sevillafc.es | #d4001a
+# Valencia CF (abonado) | https://www.valenciacf.com | #ff7900
+# Athletic Club (socio) | https://www.athletic-club.eus | #ee2523
+# Real Sociedad (socio) | https://www.realsociedad.eus | #0067b1
+# Real Betis (abonado) | https://www.realbetisbalompie.es | #0bb363
+# Villarreal CF (abonado) | https://www.villarrealcf.es | #ffe667
+
+== Dominios, hosting y web
+# GoDaddy | https://www.godaddy.com | #1bdbdb
+# Namecheap | https://www.namecheap.com | #de3723
+# IONOS | https://www.ionos.es | #003d8f
+# Hostinger | https://www.hostinger.es | #673de6
+# Dinahosting | https://dinahosting.com | #00a3e0
+# Arsys | https://www.arsys.es | #e30613
+# Raiola Networks | https://raiolanetworks.es | #00a3e0
+# Webempresa | https://www.webempresa.com | #00a3e0
+# SiteGround | https://www.siteground.es | #6b4ce6
+# Bluehost | https://www.bluehost.com | #2065d1
+# DreamHost | https://www.dreamhost.com | #0073ec
+# Cloudflare | https://www.cloudflare.com | #f38020
+- Pro
+- Business
+# DigitalOcean | https://www.digitalocean.com | #0080ff
+# Vultr | https://www.vultr.com | #007bfc
+# Akamai Linode | https://www.linode.com | #00a95c
+# Hetzner | https://www.hetzner.com | #d50c2d
+# OVHcloud | https://www.ovhcloud.com | #123f6d
+# Vercel | https://vercel.com | #111111
+- Pro
+# Netlify | https://www.netlify.com | #00c7b7
+- Pro
+# Render | https://render.com | #111111
+# Fly.io | https://fly.io | #8b5cf6
+# Railway | https://railway.com | #111111
+# Heroku | https://www.heroku.com | #430098
+# Squarespace | https://www.squarespace.com | #111111
+# Wix | https://www.wix.com | #0c6efc
+# WordPress.com | https://wordpress.com | #3858e9
+# Shopify | https://www.shopify.com | #7ab55c
+# Webflow | https://webflow.com | #146ef5
+# Ghost | https://ghost.org | #15171a
+# Mailchimp | https://mailchimp.com | #ffe01b
+- Essentials
+- Standard
+- Premium
+# Brevo | https://www.brevo.com | #0b996e
+# Kit (ConvertKit) | https://kit.com | #fb6970
+# beehiiv | https://www.beehiiv.com | #111111
+
+== Donaciones y socios
+# Cruz Roja | https://www.cruzroja.es | #e30613
+# Médicos Sin Fronteras | https://www.msf.es | #e30613
+# Greenpeace | https://es.greenpeace.org | #66b32e
+# WWF | https://www.wwf.es | #111111
+# UNICEF | https://www.unicef.es | #1cabe2
+# Amnistía Internacional | https://www.es.amnesty.org | #ffff00
+# Save the Children | https://www.savethechildren.es | #da291c
+# Oxfam Intermón | https://www.oxfamintermon.org | #6cb33f
+# Manos Unidas | https://www.manosunidas.org | #e30613
+# Ayuda en Acción | https://ayudaenaccion.org | #e30613
+# Acción contra el Hambre | https://www.accioncontraelhambre.org | #e30613
+# Fundación Vicente Ferrer | https://www.fundacionvicenteferrer.org | #e30613
+# SOS Aldeas Infantiles | https://www.aldeasinfantiles.es | #00a3e0
+# Cáritas | https://www.caritas.es | #e30613
+# Fundación Aladina | https://aladina.org | #e30613
+# Entreculturas | https://entreculturas.org | #e30613
+# Plan International | https://plan-international.es | #ff6a00
+# ACNUR (UNHCR) | https://eacnur.org | #0072bc
+# Fundación Josep Carreras | https://www.fcarreras.org | #e30613
+# AECC (Asociación Española Contra el Cáncer) | https://www.contraelcancer.es | #e30613
+# Wikipedia (Wikimedia) | https://donate.wikimedia.org | #111111
+# Mozilla | https://www.mozilla.org | #ff7139
+# Signal | https://signal.org | #3a76f0
+# The Internet Archive | https://archive.org | #111111
+# Open Collective | https://opencollective.com | #7fadf2
+# GitHub Sponsors | https://github.com/sponsors | #ea4aaa
+# Liberapay | https://liberapay.com | #f6c915

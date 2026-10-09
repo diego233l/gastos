@@ -23,8 +23,24 @@ ALIAS = {
     "GeForce NOW": "nvidia", "Gemini": "googlegemini", "Kobo Plus": "rakutenkobo",
     "Apple Fitness+": "apple", "Fitbit Premium": "fitbit", "Uber One": "uber",
     "Glovo Prime": "glovo", "Zalando Plus": "zalando", "X (Twitter)": "x",
-    "Meta Verified": "meta", "Apple One": "apple", "Movistar Plus+": "movistar", "Crunchyroll": "crunchyroll",
+    "Meta Verified": "meta", "Apple One": "apple", "Google Workspace": "googleworkspace",
+    "Microsoft Teams": "microsoftteams", "AppleCare+": "apple", "Apple Developer Program": "apple",
+    "Revolut Business": "revolut", "Apple News+": "applenews", "Ryanair Prime": "ryanair",
+    "Twitch Turbo": "twitch", "YouTube Membresías": "youtube", "Adobe Lightroom": "adobelightroom",
+    "Adobe After Effects": "adobeaftereffects", "Adobe Express": "adobe", "Adobe Stock": "adobe",
+    "Wolfram Alpha": "wolframalpha", "Akamai Linode": "linode", "Coinbase One": "coinbase",
+    "WHOOP": "whoop", "Cloudflare": "cloudflare", "Bolt.new": "bolt", "Amazon Kids+": "amazon",
+    "Suscríbete y ahorra (Amazon)": "amazon", "Prime Student": "amazonprime", "Microsoft 365 Copilot": "microsoftcopilot",
+    "Peacock": "peacock", "Paramount+": "paramountplus", "Hulu": "hulu", "F1 TV": "f1",
+    "NFL+": "nfl", "NBA League Pass": "nba", "Mistral Le Chat": "mistralai", "Character.AI": "characterdotai",
+    "Leonardo.Ai": "leonardodotai", "Windsurf": "windsurf", "Real Madrid (socio)": "realmadrid",
+    "FC Barcelona (soci)": "fcbarcelona", "Atlético de Madrid (abonado)": "atleticodemadrid",
+    "Sevilla FC (abonado)": "sevillafc", "Valencia CF (abonado)": "valenciacf", "Athletic Club (socio)": "athleticclub",
+    "Real Sociedad (socio)": "realsociedad", "Real Betis (abonado)": "realbetisbalompie", "Villarreal CF (abonado)": "villarrealcf", "Movistar Plus+": "movistar", "Crunchyroll": "crunchyroll",
 }
+
+# Coincidencias por título que serían un logo equivocado (p. ej. «R» es el lenguaje R)
+EXCLUDE = {"R", "T-Mobile"}
 
 
 def norm(text):
@@ -56,6 +72,9 @@ def main(pkg):
     made, missing = [], []
     for cat in cats:
         for svc in cat["services"]:
+            if svc["name"] in EXCLUDE:
+                missing.append(svc["name"])
+                continue
             entry = by_slug.get(ALIAS.get(svc["name"], "")) or by_title.get(norm(svc["name"]))
             if not entry:
                 missing.append(svc["name"])
