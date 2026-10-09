@@ -304,11 +304,6 @@
 - Familiar
 # LinkedIn Learning | https://www.linkedin.com/learning | #0a66c2
 - Mensual
-# LinkedIn Premium | https://www.linkedin.com/premium | #0a66c2
-- Career
-- Business
-- Sales Navigator
-- Recruiter Lite
 
 == Salud, deporte y bienestar
 # Basic-Fit | https://www.basic-fit.com | #ff6a00
@@ -339,13 +334,6 @@
 # Freeletics | https://www.freeletics.com | #ff0033
 - Coach
 # Flo | https://flo.health | #ff4f81
-- Premium
-# Tinder | https://tinder.com | #fe3c72
-- Plus
-- Gold
-- Platinum
-# Bumble | https://bumble.com | #ffc629
-- Boost
 - Premium
 
 == Telefonía e internet
@@ -421,12 +409,6 @@
 - Monitorización
 # Canal de Isabel II | https://www.canaldeisabelsegunda.es | #0072bc
 - Agua
-# Comunidad de propietarios | | #607d8b
-- Cuota
-# Alquiler | | #8d6e63
-- Mensualidad
-# Hipoteca | | #546e7a
-- Cuota
 
 == Seguros
 # Mapfre | https://www.mapfre.es | #d81e05
@@ -551,6 +533,18 @@
 - Ultimate
 
 == Redes y comunidad
+# LinkedIn Premium | https://www.linkedin.com/premium | #0a66c2
+- Career
+- Business
+- Sales Navigator
+- Recruiter Lite
+# Tinder | https://tinder.com | #fe3c72
+- Plus
+- Gold
+- Platinum
+# Bumble | https://bumble.com | #ffc629
+- Boost
+- Premium
 # X (Twitter) | https://x.com | #111111
 - Basic
 - Premium
