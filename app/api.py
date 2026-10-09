@@ -980,11 +980,21 @@ class Context(object):
     def raw_body(self, limit, too_big_msg):
         n = self.length()
         if n > limit:
+            self.drain(n)
             raise ApiError(413, too_big_msg)
         data = self.rfile.read(n) if n else b""
         if len(data) != n:
             raise ApiError(400, "El cuerpo de la petición está incompleto.")
         return data
+
+    def drain(self, n):
+        # Consumir el cuerpo evita que fcgiwrap devuelva un error mudo al responder antes de leerlo
+        left = min(n, 4_000_000)
+        while left > 0:
+            chunk = self.rfile.read(min(65536, left))
+            if not chunk:
+                break
+            left -= len(chunk)
 
     def json_body(self, optional=False):
         data = self.raw_body(MAX_JSON_BODY, "La petición es demasiado grande.")
