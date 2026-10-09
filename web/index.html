@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#4f46e5">
+  <title>Mis suscripciones</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#/" aria-label="Ir al inicio">
+        <span class="brand-mark" aria-hidden="true">€</span>
+        <span class="brand-name">Suscripciones</span>
+      </a>
+      <nav class="tabs" id="tabs" aria-label="Secciones">
+        <a href="#/" data-tab="home">Inicio</a>
+        <a href="#/cobros" data-tab="charges">Cobros</a>
+        <a href="#/stats" data-tab="stats">Estadísticas</a>
+        <a href="#/ajustes" data-tab="settings">Ajustes</a>
+      </nav>
+    </div>
+  </header>
+  <main id="view" class="view" aria-live="polite"></main>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p class="noscript">Esta aplicación necesita JavaScript.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

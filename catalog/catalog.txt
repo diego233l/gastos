@@ -1,0 +1,567 @@
+// =====================================================================
+// CATÁLOGO DE SERVICIOS Y PLANES  (escrito de memoria, precios en EUR/IVA incl.)
+//
+// Formato (las líneas que empiezan por // son comentarios y se ignoran):
+//   == Categoría
+//   # Servicio | https://web-oficial | #color
+//   - Plan | precio | ciclo        (precio y ciclo son opcionales)
+//
+// Ciclos: semanal, mensual, bimestral, trimestral, semestral, anual.
+// Los precios son ORIENTATIVOS (España): comprueba siempre el precio real
+// en la web del servicio. Los planes sin precio es que no estoy seguro.
+// Valida este archivo con:  python3 scripts/check_catalog.py
+// =====================================================================
+
+== Streaming de vídeo
+# Netflix | https://www.netflix.com | #e50914
+- Estándar con anuncios | 5.49 | mensual
+- Estándar | 13.99 | mensual
+- Premium | 19.99 | mensual
+# Prime Video | https://www.primevideo.com | #00a8e1
+- Prime Video | 4.99 | mensual
+# Disney+ | https://www.disneyplus.com | #113ccf
+- Estándar con anuncios | 5.99 | mensual
+- Estándar | 9.99 | mensual
+- Premium | 13.99 | mensual
+# HBO Max | https://www.max.com | #5b2bd9
+- Básico con anuncios | 5.49 | mensual
+- Estándar | 9.99 | mensual
+- Premium | 14.99 | mensual
+# Apple TV+ | https://tv.apple.com | #1d1d1f
+- Mensual | 9.99 | mensual
+# SkyShowtime | https://www.skyshowtime.com | #3a1d8f
+- Estándar con anuncios
+- Premium
+# Filmin | https://www.filmin.es | #1e1e1e
+- Mensual
+- Anual
+# Movistar Plus+ | https://www.movistarplus.es | #0b2739
+- Plan básico
+# DAZN | https://www.dazn.com | #f8f8f5
+- Mensual
+- Anual
+# Crunchyroll | https://www.crunchyroll.com | #f47521
+- Fan
+- Mega Fan
+- Ultimate Fan
+# Atresplayer | https://www.atresplayer.com | #ff5a00
+- Premium
+# Mitele Plus | https://www.mitele.es | #0d6cff
+- Plus
+# YouTube Premium | https://www.youtube.com/premium | #ff0000
+- Individual
+- Familiar
+- Estudiantes
+# MUBI | https://mubi.com | #0c0c0c
+- Mensual
+- Anual
+# Twitch | https://www.twitch.tv | #9146ff
+- Suscripción Nivel 1
+# Eurosport | https://www.eurosport.es | #003087
+- Mensual
+
+== Música y podcasts
+# Spotify | https://www.spotify.com | #1db954
+- Individual | 11.99 | mensual
+- Dúo
+- Familiar
+- Estudiantes
+# Apple Music | https://music.apple.com | #fa243c
+- Individual | 10.99 | mensual
+- Familiar | 16.99 | mensual
+- Estudiantes | 5.99 | mensual
+# YouTube Music | https://music.youtube.com | #ff0000
+- Premium Individual
+- Premium Familiar
+- Premium Estudiantes
+# Amazon Music | https://music.amazon.es | #25d1da
+- Unlimited Individual
+- Unlimited Familiar
+# Tidal | https://tidal.com | #111111
+- Individual
+- Familiar
+# Deezer | https://www.deezer.com | #a238ff
+- Premium
+- Familiar
+# Qobuz | https://www.qobuz.com | #1f1f1f
+- Studio
+- Sublime
+# SoundCloud | https://soundcloud.com | #ff5500
+- Artist
+- Next Pro
+# Audible | https://www.audible.es | #f8991d
+- Plan Premium | 9.99 | mensual
+# Storytel | https://www.storytel.com | #ff5a2a
+- Individual
+- Familiar
+# Patreon | https://www.patreon.com | #f96854
+- Apoyo a creador
+
+== Videojuegos
+# PlayStation Plus | https://www.playstation.com | #003791
+- Essential
+- Extra
+- Premium
+# Xbox Game Pass | https://www.xbox.com/xbox-game-pass | #107c10
+- Essential
+- Premium
+- Ultimate
+- PC Game Pass
+# Nintendo Switch Online | https://www.nintendo.com | #e60012
+- Individual 1 mes | 3.99 | mensual
+- Individual 12 meses | 19.99 | anual
+- Familiar 12 meses | 34.99 | anual
+# EA Play | https://www.ea.com/ea-play | #ff4747
+- EA Play
+- EA Play Pro
+# Ubisoft+ | https://www.ubisoft.com | #0070ff
+- Classics
+- Premium
+# GeForce NOW | https://www.nvidia.com/geforce-now | #76b900
+- Performance
+- Ultimate
+# Apple Arcade | https://www.apple.com/apple-arcade | #1d1d1f
+- Mensual | 4.99 | mensual
+# World of Warcraft | https://worldofwarcraft.blizzard.com | #148eff
+- Suscripción
+# Final Fantasy XIV | https://www.finalfantasyxiv.com | #a0212b
+- Suscripción
+
+== Nube y almacenamiento
+# iCloud+ | https://www.icloud.com | #3693f5
+- 50 GB | 0.99 | mensual
+- 200 GB | 2.99 | mensual
+- 2 TB | 9.99 | mensual
+# Google One | https://one.google.com | #4285f4
+- Básico 100 GB | 1.99 | mensual
+- Estándar 200 GB | 2.99 | mensual
+- Premium 2 TB | 9.99 | mensual
+# Dropbox | https://www.dropbox.com | #0061ff
+- Plus
+- Essentials
+# OneDrive | https://onedrive.live.com | #0078d4
+- 100 GB
+# Proton Drive | https://proton.me/drive | #6d4aff
+- Drive Plus
+- Unlimited
+# pCloud | https://www.pcloud.com | #20bdb5
+- Premium 500 GB
+- Premium Plus 2 TB
+# MEGA | https://mega.io | #d9272e
+- Pro Lite
+- Pro I
+- Pro II
+- Pro III
+# Backblaze | https://www.backblaze.com | #e21e26
+- Computer Backup
+
+== Software y productividad
+# Microsoft 365 | https://www.microsoft.com/microsoft-365 | #d83b01
+- Personal
+- Familia
+# Adobe Creative Cloud | https://www.adobe.com | #fa0f00
+- Todas las aplicaciones
+- Photography
+- Photoshop
+- Illustrator
+- Premiere Pro
+- Acrobat Pro
+# Canva | https://www.canva.com | #00c4cc
+- Pro
+- Teams
+# Notion | https://www.notion.so | #111111
+- Plus
+- Business
+# Evernote | https://evernote.com | #00a82d
+- Personal
+- Professional
+# 1Password | https://1password.com | #0572ec
+- Individual
+- Familias
+# Bitwarden | https://bitwarden.com | #175ddc
+- Premium
+- Familias
+# Dashlane | https://www.dashlane.com | #0e353d
+- Premium
+- Friends & Family
+# Todoist | https://todoist.com | #db4c3f
+- Pro
+- Business
+# Figma | https://www.figma.com | #a259ff
+- Professional
+# GitHub | https://github.com | #24292e
+- Pro
+- Team
+# JetBrains | https://www.jetbrains.com | #000000
+- All Products Pack
+- IntelliJ IDEA
+- PyCharm
+# Zoom | https://zoom.us | #0b5cff
+- Pro
+# Slack | https://slack.com | #4a154b
+- Pro
+# Obsidian | https://obsidian.md | #7c3aed
+- Sync
+- Publish
+# Grammarly | https://www.grammarly.com | #15c39a
+- Premium
+# DeepL | https://www.deepl.com | #0f2b46
+- Starter
+- Advanced
+# Setapp | https://setapp.com | #e6a700
+- Mac
+- Mac + iOS
+
+== Inteligencia artificial
+# ChatGPT | https://chatgpt.com | #10a37f
+- Go
+- Plus
+- Pro
+# Claude | https://claude.ai | #d97757
+- Pro
+- Max 5x
+- Max 20x
+# Gemini | https://gemini.google.com | #4285f4
+- Google AI Pro
+- Google AI Ultra
+# Perplexity | https://www.perplexity.ai | #20808d
+- Pro
+- Max
+# Microsoft Copilot | https://copilot.microsoft.com | #0f6cbd
+- Copilot Pro
+# GitHub Copilot | https://github.com/features/copilot | #24292e
+- Pro
+- Pro+
+# Cursor | https://cursor.com | #111111
+- Pro
+- Ultra
+# Midjourney | https://www.midjourney.com | #1f1f1f
+- Basic
+- Standard
+- Pro
+# ElevenLabs | https://elevenlabs.io | #111111
+- Starter
+- Creator
+# Grok | https://grok.com | #111111
+- SuperGrok
+
+== Noticias y lectura
+# El País | https://elpais.com | #1a1a1a
+- Suscripción digital
+# El Mundo | https://www.elmundo.es | #0b3a6f
+- Suscripción digital
+# La Vanguardia | https://www.lavanguardia.com | #0057a0
+- Suscripción digital
+# ABC | https://www.abc.es | #cc0000
+- Suscripción digital
+# El Confidencial | https://www.elconfidencial.com | #e2231a
+- Suscripción digital
+# elDiario.es | https://www.eldiario.es | #e6007e
+- Socio/a
+# The New York Times | https://www.nytimes.com | #1a1a1a
+- Digital
+- All Access
+# The Economist | https://www.economist.com | #e3120b
+- Digital
+# Financial Times | https://www.ft.com | #fcd0b1
+- Standard Digital
+- Premium Digital
+# Kindle Unlimited | https://www.amazon.es/kindle-dbs/hz/subscribe/ku | #ff9900
+- Mensual | 9.99 | mensual
+# Kobo Plus | https://www.kobo.com | #bf0000
+- Lectura
+- Lectura + Escucha
+# Everand | https://www.everand.com | #1e7b85
+- Mensual
+# Medium | https://medium.com | #111111
+- Membresía
+# Blinkist | https://www.blinkist.com | #00e17a
+- Premium
+# Perlego | https://www.perlego.com | #1c8eff
+- Individual
+
+== Formación e idiomas
+# Duolingo | https://www.duolingo.com | #58cc02
+- Super
+- Max
+- Familia
+# Babbel | https://www.babbel.com | #ff7a00
+- Suscripción
+# Busuu | https://www.busuu.com | #4a56e2
+- Premium
+# Coursera | https://www.coursera.org | #0056d2
+- Coursera Plus
+# Platzi | https://platzi.com | #98ca3f
+- Expert
+- Expert+
+# Domestika | https://www.domestika.org | #e0004d
+- Plus
+# Skillshare | https://www.skillshare.com | #00ff84
+- Premium
+# MasterClass | https://www.masterclass.com | #111111
+- Individual
+- Duo
+- Familiar
+# LinkedIn Learning | https://www.linkedin.com/learning | #0a66c2
+- Mensual
+# LinkedIn Premium | https://www.linkedin.com/premium | #0a66c2
+- Career
+- Business
+- Sales Navigator
+- Recruiter Lite
+
+== Salud, deporte y bienestar
+# Basic-Fit | https://www.basic-fit.com | #ff6a00
+- Basic
+- Comfort
+- Premium
+# Wellhub (Gympass) | https://wellhub.com | #ff3d5a
+- Plan individual
+# Strava | https://www.strava.com | #fc4c02
+- Mensual
+- Anual
+# Apple Fitness+ | https://www.apple.com/apple-fitness-plus | #fa243c
+- Mensual | 9.99 | mensual
+# Fitbit Premium | https://www.fitbit.com | #00b0b9
+- Mensual
+- Anual
+# Headspace | https://www.headspace.com | #f47d31
+- Mensual
+- Anual
+# Calm | https://www.calm.com | #3f8efc
+- Mensual
+- Anual
+# MyFitnessPal | https://www.myfitnesspal.com | #0070ff
+- Premium
+# Peloton | https://www.onepeloton.com | #111111
+- App One
+- App+
+# Freeletics | https://www.freeletics.com | #ff0033
+- Coach
+# Flo | https://flo.health | #ff4f81
+- Premium
+# Tinder | https://tinder.com | #fe3c72
+- Plus
+- Gold
+- Platinum
+# Bumble | https://bumble.com | #ffc629
+- Boost
+- Premium
+
+== Telefonía e internet
+# Movistar | https://www.movistar.es | #019df4
+- Fusión
+- Móvil
+- Fibra
+# Vodafone | https://www.vodafone.es | #e60000
+- Vodafone One
+- Móvil
+- Fibra
+# Orange | https://www.orange.es | #ff7900
+- Love
+- Móvil
+- Fibra
+# MasOrange | https://www.masorange.es | #ff7900
+- Móvil
+- Fibra
+# Yoigo | https://www.yoigo.com | #00b8c4
+- Móvil
+- Fibra
+# Digi | https://www.digimobil.es | #1f4aa8
+- Móvil
+- Fibra
+# Pepephone | https://www.pepephone.com | #ff3366
+- Móvil
+- Fibra
+# Lowi | https://www.lowi.es | #7a2b8f
+- Móvil
+- Fibra
+# O2 | https://www.o2online.es | #0050ff
+- Móvil
+- Fibra
+# Simyo | https://www.simyo.es | #ffcc00
+- Móvil
+# Finetwork | https://www.finetwork.com | #e5007d
+- Móvil
+- Fibra
+# Jazztel | https://www.jazztel.com | #ff7900
+- Fibra
+- Fibra + móvil
+# Lycamobile | https://www.lycamobile.es | #e30613
+- Móvil
+# Starlink | https://www.starlink.com | #111111
+- Residencial
+- Roam
+
+== Hogar y suministros
+# Iberdrola | https://www.iberdrola.es | #3da435
+- Luz
+- Gas
+# Endesa | https://www.endesa.com | #0066cc
+- Luz
+- Gas
+# Naturgy | https://www.naturgy.es | #ff6f00
+- Luz
+- Gas
+# Repsol | https://www.repsol.es | #ff8200
+- Luz
+- Gas
+# TotalEnergies | https://www.totalenergies.es | #ed0000
+- Luz
+- Gas
+# Holaluz | https://www.holaluz.com | #ff5e5b
+- Luz
+# Octopus Energy | https://octopusenergy.es | #e10098
+- Luz
+# Securitas Direct | https://www.securitasdirect.es | #e60000
+- Alarma
+# Prosegur Alarmas | https://www.prosegur.es | #0033a0
+- Alarma
+# Ajax Systems | https://ajax.systems | #1c1c1c
+- Monitorización
+# Canal de Isabel II | https://www.canaldeisabelsegunda.es | #0072bc
+- Agua
+# Comunidad de propietarios | | #607d8b
+- Cuota
+# Alquiler | | #8d6e63
+- Mensualidad
+# Hipoteca | | #546e7a
+- Cuota
+
+== Seguros
+# Mapfre | https://www.mapfre.es | #d81e05
+- Coche
+- Hogar
+- Salud
+- Vida
+# AXA | https://www.axa.es | #00008f
+- Coche
+- Hogar
+- Salud
+# Mutua Madrileña | https://www.mutua.es | #00a1e0
+- Coche
+- Hogar
+- Salud
+# Sanitas | https://www.sanitas.es | #0072ce
+- Salud
+- Dental
+# Adeslas | https://www.adeslas.es | #e30613
+- Salud
+- Dental
+# Asisa | https://www.asisa.es | #00a650
+- Salud
+- Dental
+# DKV | https://dkvseguros.com | #00a651
+- Salud
+# Línea Directa | https://www.lineadirecta.com | #e60012
+- Coche
+- Hogar
+# Allianz | https://www.allianz.es | #003781
+- Coche
+- Hogar
+- Salud
+# Generali | https://www.generali.es | #c8102e
+- Coche
+- Hogar
+- Salud
+# Verti | https://www.verti.es | #ffdd00
+- Coche
+- Moto
+# Pelayo | https://www.pelayo.com | #ffd200
+- Coche
+- Hogar
+# Mutua de Propietarios | https://www.mutuadepropietarios.es | #00549f
+- Hogar
+
+== Transporte y movilidad
+# Abono Transporte Madrid | https://www.crtm.es | #d6001c
+- Joven | 20.00 | mensual
+- Normal 30 días | 54.60 | mensual
+- Tercera edad | 6.00 | mensual
+# Bicing | https://www.bicing.barcelona | #e30613
+- Cuota anual
+# BiciMAD | https://www.bicimad.com | #d6001c
+- Anual
+# Cabify | https://cabify.com | #7146fb
+- Cabify Plus
+# Uber One | https://www.uber.com | #111111
+- Mensual
+- Anual
+# Glovo Prime | https://glovoapp.com | #ffc244
+- Prime | 5.99 | mensual
+# Renfe | https://www.renfe.com | #8c0c5f
+- Abono
+# Parking | | #455a64
+- Plaza de garaje
+# Peaje (Telepeaje) | | #78909c
+- Cuota
+
+== Compras y membresías
+# Amazon Prime | https://www.amazon.es/prime | #ff9900
+- Mensual | 4.99 | mensual
+- Anual | 49.90 | anual
+# Zalando Plus | https://www.zalando.es | #ff6900
+- Plus
+# El Corte Inglés | https://www.elcorteingles.es | #00753a
+- Club
+# Costco | https://www.costco.es | #e31837
+- Socio individual
+# Just Eat | https://www.just-eat.es | #ff8000
+- Pass
+# Wallapop | https://es.wallapop.com | #13c1ac
+- Pro
+# Decathlon | https://www.decathlon.es | #0082c3
+- Club
+
+== Seguridad y VPN
+# NordVPN | https://nordvpn.com | #4687ff
+- Basic
+- Plus
+- Complete
+# ExpressVPN | https://www.expressvpn.com | #da3940
+- Basic
+- Advanced
+- Pro
+# Surfshark | https://surfshark.com | #1eb2a6
+- Starter
+- One
+- One+
+# Proton | https://proton.me | #6d4aff
+- Mail Plus
+- VPN Plus
+- Unlimited
+# Mullvad VPN | https://mullvad.net | #294d73
+- Mensual | 5.00 | mensual
+# Norton | https://es.norton.com | #fdc200
+- 360 Standard
+- 360 Deluxe
+- 360 Premium
+# McAfee | https://www.mcafee.com | #c01818
+- Total Protection
+- Advanced
+# Bitdefender | https://www.bitdefender.es | #ed1c24
+- Total Security
+- Family Pack
+# Kaspersky | https://www.kaspersky.es | #00a88e
+- Standard
+- Plus
+- Premium
+# Malwarebytes | https://www.malwarebytes.com | #0d3ecc
+- Premium
+- Ultimate
+
+== Redes y comunidad
+# X (Twitter) | https://x.com | #111111
+- Basic
+- Premium
+- Premium+
+# Telegram | https://telegram.org | #229ed9
+- Premium
+# Discord | https://discord.com | #5865f2
+- Nitro Basic
+- Nitro
+# Snapchat | https://www.snapchat.com | #fffc00
+- Snapchat+
+# Meta Verified | https://about.meta.com/technologies/meta-verified | #0866ff
+- Facebook
+- Instagram
